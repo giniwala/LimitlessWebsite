@@ -6,7 +6,7 @@
     "dev": "next dev --webpack",
     "dev:turbo": "next dev --turbo",
     "clean": "rm -rf .next",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },
