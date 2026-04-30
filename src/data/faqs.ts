@@ -21,7 +21,7 @@ export const faqs: FAQ[] = [
     category: "Recruiting",
     question: "When does recruitment happen?",
     answer:
-      "The placeholder timeline is early fall and early spring. Replace this answer with exact information once the board confirms the semester schedule.",
+      "Typical recruiting timelines begin in early fall and early spring. Stay connected with our social media for live updates.",
   },
   {
     id: "member-time",
@@ -49,7 +49,7 @@ export const faqs: FAQ[] = [
     category: "Client Services",
     question: "Are consulting engagements paid?",
     answer:
-      "This is a placeholder policy. Many student consulting organizations offer low-cost or no-cost support, but the board should confirm the official engagement model before launch.",
+      "No. Our consulting services are completely free of charge.",
   },
   {
     id: "client-duration",
@@ -63,13 +63,13 @@ export const faqs: FAQ[] = [
     category: "General",
     question: "Is Limitless Consulting affiliated with Michigan State University?",
     answer:
-      "Limitless Consulting is written here as a student organization at Michigan State University. Replace this language with the official RSO wording once approved.",
+      "Limitless Consulting is a Broad student organization registered with Michigan State University.",
   },
   {
     id: "general-contact",
     category: "General",
     question: "How do I contact the team?",
     answer:
-      `Use the contact page or email ${siteConfig.contact.email}. Replace the official inbox in src/data/siteConfig.ts if it changes.`,
+      `Use the contact page or email ${siteConfig.contact.email}.`,
   },
 ];

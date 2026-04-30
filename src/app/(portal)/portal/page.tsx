@@ -230,7 +230,7 @@ export default async function PortalPage({ searchParams }: PortalPageProps) {
               <article key={team} className="rounded-md border border-border bg-background p-4">
                 <p className="font-semibold text-foreground">{team}</p>
                 <p className="mt-2 text-sm leading-6 text-muted">
-                  Placeholder assignment. Add project manager, consultants, client, weekly meeting time, and current milestone.
+                  Team details are shared through the current semester workspace, including project manager, meeting rhythm, and active milestone.
                 </p>
               </article>
             ))}

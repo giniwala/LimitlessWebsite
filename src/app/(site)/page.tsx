@@ -1,15 +1,16 @@
 import { Mail } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/common/button-link";
 import { CTA } from "@/components/common/cta";
 import { iconMap } from "@/components/common/icon-map";
 import { SectionHeader } from "@/components/common/section-header";
 import { StatCard } from "@/components/common/stat-card";
-import { CaseStudyCard } from "@/components/case-study-card";
+import { ClientHighlightCard } from "@/components/client-highlight-card";
 import { ServiceCard } from "@/components/service-card";
 import { Hero } from "@/components/sections/hero";
 import { TeamCard } from "@/components/team-card";
-import { previewEngagements } from "@/data/engagements";
+import { publishedClientHighlights } from "@/data/clients";
 import { services } from "@/data/services";
 import { siteCopy } from "@/data/siteCopy";
 import { stats } from "@/data/stats";
@@ -72,7 +73,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="relative overflow-hidden py-20">
+        <div className="pointer-events-none absolute -left-24 top-12 hidden size-80 opacity-[0.035] lg:block">
+          <Image
+            src="/brand/limitless-logo.svg"
+            alt=""
+            fill
+            sizes="320px"
+            className="object-contain"
+          />
+        </div>
         <div className="container-page">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeader
@@ -81,12 +91,12 @@ export default function Home() {
               description={siteCopy.home.engagementsPreview.description}
             />
             <ButtonLink href="/engagements" variant="secondary">
-              See Case Studies
+              View Engagements
             </ButtonLink>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {previewEngagements.map((study) => (
-              <CaseStudyCard key={study.name} study={study} />
+            {publishedClientHighlights.map((client) => (
+              <ClientHighlightCard key={client.name} client={client} />
             ))}
           </div>
         </div>

@@ -12,9 +12,9 @@ export const siteConfig = {
     // Controls the navbar/footer logo. Replace the file in public/brand to update it.
     logoPath: "/brand/limitless-logo.svg",
     logoFallbackPath: "/brand/limitless-logo.jpeg",
-    motionPath: "/brand/limitless-motion.mp4",
+    motionPath: "/brand/motion/limitless-animation-02.mp4",
     motionPosterPath: "/brand/limitless-white-on-green.png",
-    fallbackInitials: "LC",
+    fallbackInitials: "L",
   },
   contact: {
     // Public contact email used on the contact page, footer, and mailto links.

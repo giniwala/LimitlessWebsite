@@ -7,9 +7,9 @@ import { siteConfig } from "@/data/siteConfig";
 
 export const announcements: Announcement[] = [
   {
-    title: "Weekly meeting moved to Wednesday",
+    title: "Weekly meeting agenda posted",
     date: "2026-09-09",
-    body: "Placeholder announcement for all members. Replace with weekly updates from the executive board.",
+    body: "Review this week's agenda before the general body meeting and bring any project updates your team needs to discuss.",
   },
   {
     title: "Project manager scope reviews due Friday",
@@ -19,7 +19,7 @@ export const announcements: Announcement[] = [
   {
     title: "Shared drive cleanup",
     date: "2026-09-13",
-    body: "Replace this with an update about resource folders, meeting materials, or semester logistics.",
+    body: "Please keep active project folders organized so project managers and board members can find current files quickly.",
   },
 ];
 
@@ -111,7 +111,7 @@ export const portalResources: PortalResource[] = [
   },
   {
     title: "Client Deliverables Folder",
-    description: "Shared placeholder folder for final reports, decks, and research files.",
+    description: "Shared folder for final reports, decks, research files, and approved project materials.",
     href: siteConfig.externalLinks.clientDeliverablesFolder,
     type: "Folder",
     icon: "database",

@@ -57,7 +57,7 @@ export function TeamCard({ person }: { person: TeamMember }) {
           <p className="mt-4 flex-1 text-sm leading-6 text-muted">{person.bio}</p>
         ) : (
           <p className="mt-4 flex-1 text-sm leading-6 text-muted">
-            Student member profile. Add a short approved bio in src/data/team.ts.
+            Student consultant at Michigan State University contributing to Limitless projects, learning, and community.
           </p>
         )}
         {person.email ? (

@@ -3,23 +3,23 @@ import type { Stat } from "@/types/content";
 // TODO: Replace these placeholder values with verified organization stats.
 export const stats: Stat[] = [
   {
-    value: "24+",
-    label: "Student consultants",
-    description: "Editable placeholder",
+    value: "30+",
+    label: "Student Consultants",
+    description: "Quickly growing",
   },
   {
-    value: "3",
-    label: "Years active",
-    description: "Update once confirmed",
+    value: "3+",
+    label: "Years Active",
+    description: "Startup atmosphere",
   },
   {
-    value: "12+",
-    label: "Startup projects",
-    description: "Placeholder project count",
+    value: "20+",
+    label: "Startup Engagements",
+    description: "Growing client roster",
   },
   {
-    value: "8",
-    label: "Service areas",
-    description: "Built for student ventures",
+    value: "10+",
+    label: "Industries Served",
+    description: "Built for all student ventures",
   },
 ];

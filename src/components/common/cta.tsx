@@ -1,6 +1,7 @@
 import { ArrowRight, Mail } from "lucide-react";
 import { LogoMotionPanel } from "@/components/brand/logo-motion-panel";
 import { ButtonLink } from "@/components/common/button-link";
+import { SocialLinks } from "@/components/common/social-links";
 import { siteConfig } from "@/data/siteConfig";
 
 type CTAProps = {
@@ -32,6 +33,10 @@ export function CTA({
           <ButtonLink href="/contact" variant="secondary" icon={Mail} className="border-white/30 bg-transparent text-white hover:bg-white hover:text-brand-deep">
             Work With Us
           </ButtonLink>
+        </div>
+        <div className="lg:col-span-3">
+          <p className="mb-3 text-sm font-semibold text-brand-soft">Follow our work</p>
+          <SocialLinks variant="light" />
         </div>
       </div>
     </section>

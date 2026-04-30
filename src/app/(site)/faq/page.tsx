@@ -19,7 +19,7 @@ export default function FAQPage() {
             Questions from applicants, founders, clients, and campus partners.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/78">
-            These answers are editable placeholders. Confirm policies before launch.
+            Quick answers for people exploring membership, client support, partnerships, or general organization details.
           </p>
         </div>
       </section>
@@ -28,8 +28,8 @@ export default function FAQPage() {
         <div className="container-page">
           <SectionHeader
             eyebrow="Answers"
-            title="Editable FAQ library"
-            description="FAQs are grouped by category and powered by a single data file."
+            title="What visitors usually want to know"
+            description="Browse common questions by recruiting, member experience, client services, and general topics."
           />
           <div className="mt-10">
             <FAQAccordion items={faqs} />

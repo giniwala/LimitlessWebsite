@@ -28,15 +28,15 @@ export default function OpenGraphImage() {
             border: "2px solid rgba(255,255,255,0.28)",
             borderRadius: "12px",
             display: "flex",
-            fontSize: 36,
+            fontSize: 28,
             fontWeight: 700,
             height: 88,
             justifyContent: "center",
             marginBottom: 42,
-            width: 88,
+            padding: "0 28px",
           }}
         >
-          LC
+          Limitless
         </div>
         <div style={{ color: "#d9f0e4", fontSize: 32, fontWeight: 600 }}>
           Michigan State University

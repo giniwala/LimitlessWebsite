@@ -35,7 +35,7 @@ export function ButtonLink({
 
   if (href.startsWith("http") || href.startsWith("mailto:")) {
     return (
-      <a className={classes} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+      <a className={classes} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined}>
         <span>{children}</span>
         <Icon aria-hidden className="size-4" />
       </a>

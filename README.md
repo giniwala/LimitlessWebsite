@@ -67,7 +67,10 @@ npm run dev
 The default dev script must stay Webpack-based:
 
 ```json
-"dev": "next dev --webpack"
+"dev": "next dev --webpack",
+"build": "next build --webpack",
+"dev:turbo": "next dev --turbo",
+"clean": "rm -rf .next"
 ```
 
 If the browser ever gets stuck on a flashing or never-ending loading screen, stop the server and clear the cache:
@@ -135,15 +138,57 @@ Each service includes:
 
 ### Clients and Engagements
 
-Edit `src/data/engagements.ts`.
+Homepage client highlights and the simplified Engagements page both use `src/data/clients.ts`. The public website intentionally shows company identity, broad category, and public-safe context rather than private consulting scopes.
+
+Use `src/data/clients.ts` for client/company cards:
+
+- `name`
+- `category`
+- `websiteUrl`
+- `linkedInUrl`
+- `logoSrc`
+- `logoAlt`
+- `shortDescription`
+- `publicHighlights`
+- `publishStatus`
+- `needsReview`
 
 Rules:
 
 - Use public names only when the client/startup has appeared in a public Limitless post or an official public source.
 - Keep descriptions conservative.
 - Do not publish private recommendations, decks, metrics, or outcomes without client approval.
-- Set `isPublic: false` for anything still under review.
+- Set `publishStatus: "review"` or `needsReview: true` for anything still under review.
 - Use `CLIENT_RESEARCH.md` to track source links, confidence, and publication safety.
+
+For the homepage, do not describe private project work. Use wording like:
+
+```txt
+Select organizations connected to our consulting work.
+```
+
+Avoid wording that implies Limitless caused public milestones, fundraising, competition results, or retail growth.
+
+### Client Logos
+
+Client logos live in `public/images/clients`. Current client logos:
+
+- `brce-logo.png`
+- `zolli-candy-logo.png`
+- `cocomar-logo.png`
+
+To replace or add a logo:
+
+1. Add the image to `public/images/clients`.
+2. Use a lowercase hyphenated filename such as `brce-logo.png`.
+3. Add the path in `src/data/clients.ts`:
+
+```ts
+logoSrc: "/images/clients/brce-logo.png",
+logoAlt: "BRCĒ logo"
+```
+
+Use logos only when the board has permission or the asset is publicly appropriate. If permission or quality is unclear, leave `logoSrc` empty and the site will use a clean text fallback.
 
 ### FAQs
 
@@ -168,6 +213,18 @@ Each member can include:
 - `order`
 
 Executive Board members appear first when `category: "Executive Board"` and lower `order` values are used.
+
+### Team Majors, Bios, and LinkedIn Review
+
+Majors and bios also live in `src/data/team.ts`.
+
+Rules:
+
+- Keep bios to one or two sentences.
+- Do not invent majors, internships, awards, or leadership claims.
+- If a LinkedIn match is uncertain, leave `linkedin: ""` and set `needsLinkedInReview: true`.
+- If a major is not verified through the roster, member confirmation, or a public source, leave `major` blank.
+- Use `TEAM_REVIEW.md` to track source links, confidence, and missing information.
 
 ### Headshots and Framing
 
@@ -223,6 +280,16 @@ Actual shared folder/resource URLs live in `src/data/siteConfig.ts` under `exter
 
 Do not paste private keys or secret tokens into data files.
 
+### Social Media Links and Icons
+
+Official social URLs live in `src/data/siteConfig.ts`:
+
+- `externalLinks.linkedin`
+- `externalLinks.instagram`
+- `contact.email`
+
+The site currently uses lucide icon components through `src/components/common/social-links.tsx`. Raw social logo files in `assets-to-import` are not used unless they are clearly approved and license-safe. If you later use custom social logo files, place optimized versions in `public/images/social` and update the social component.
+
 ## Member Portal Password
 
 The portal uses a server-side shared password:
@@ -255,18 +322,39 @@ Final brand assets used by the website live in `public/brand`:
 - `limitless-logo.svg`
 - `limitless-logo.jpeg`
 - `limitless-white-on-green.png`
-- `limitless-motion.mp4`
+- `limitless-app-icon.png`
+- `apple-touch-icon.png`
+- `motion/limitless-animation-02.mp4`
 
-The navbar and footer use `siteConfig.brand.logoPath`, with a JPEG and initials fallback.
+The navbar and footer use `siteConfig.brand.logoPath`, with a JPEG and simple text fallback.
 
 Logo motion is used subtly in the final CTA. It is muted, looped, inline, and hidden for reduced-motion users through CSS.
 
-To replace logo or animation assets:
+The browser tab and app icons live in:
+
+- `src/app/favicon.ico`
+- `src/app/icon.png`
+- `src/app/apple-icon.png`
+
+To replace the favicon/browser-tab icon, export a square Limitless mark that remains readable at small size, replace those three files, and confirm `src/app/layout.tsx` still references them in `metadata.icons`.
+
+To replace logo assets:
 
 1. Put raw exports in `assets-to-import/logo` or `assets-to-import/logo-motion`.
 2. Copy approved, web-ready files into `public/brand`.
 3. Update paths in `src/data/siteConfig.ts`.
 4. Compress large PNG/video files before committing.
+
+Subtle brand treatments use the same logo files as low-opacity decorative marks in the homepage hero, homepage client showcase, Engagements hero, and final CTA. Keep these accents restrained so they support the content rather than competing with it.
+
+To replace the motion animation:
+
+1. Export the new animation as a small MP4, ideally with no audio.
+2. Put the raw file in `assets-to-import/logo-motion`.
+3. Copy the production file into `public/brand/motion` with a lowercase hyphenated filename.
+4. Update `siteConfig.brand.motionPath`.
+5. Keep a static fallback image in `siteConfig.brand.motionPosterPath`.
+6. Run `npm run lint` and `npm run build`.
 
 ## Asset Organization Guide
 
@@ -274,10 +362,12 @@ Recommended folders:
 
 - `assets-to-import`: temporary local drop zone for raw files.
 - `public/brand`: approved logo and motion assets.
+- `public/brand/motion`: approved MP4 animation files.
 - `public/images/hero`: group photos for the homepage slideshow.
 - `public/images/board`: optional board-specific photos.
 - `public/images/team`: standardized team headshots.
 - `public/images/clients`: approved client/case study visuals only.
+- `public/images/social`: optional custom social media logo assets.
 
 Asset rules:
 
@@ -302,12 +392,20 @@ Asset rules:
 Useful commands:
 
 ```bash
+npm run clean
+npm run lint
 npm run build
+git status
+git add .
+git commit -m "Update client showcase and brand polish"
+git push
 npm install -g vercel
 vercel login
 vercel
 vercel --prod
 ```
+
+Vercel should use the connected GitHub repository for normal deployments. The `vercel` CLI commands are optional if you need to manage deployments manually.
 
 ## Domain and Email
 

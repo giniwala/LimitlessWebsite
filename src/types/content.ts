@@ -61,20 +61,19 @@ export type Service = {
   exampleDeliverables: string[];
 };
 
-export type Engagement = {
+export type ClientHighlight = {
   name: string;
-  industry: string;
-  problem: string;
-  approach: string;
-  deliverables: string[];
-  impact: string;
-  image?: string;
-  isPublic: boolean;
-  confidence?: "high" | "medium" | "low";
-  sourceLabel?: string;
+  category: string;
+  websiteUrl: string;
+  linkedInUrl: string;
+  logoSrc?: string;
+  logoAlt?: string;
+  shortDescription: string;
+  publicHighlights: string[];
+  sourceNotes?: string;
+  publishStatus: "publish" | "review" | "draft";
+  needsReview: boolean;
 };
-
-export type CaseStudy = Engagement;
 
 export type FAQ = {
   id: string;

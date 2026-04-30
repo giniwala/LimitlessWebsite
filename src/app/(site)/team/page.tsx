@@ -19,7 +19,7 @@ export default function TeamPage() {
             The students leading projects, recruiting, and member development.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/78">
-            Roster information is sourced from the Spring 2026 master workbook and can be updated from src/data/team.ts.
+            Meet the students shaping client work, recruiting, operations, content, and member development at Limitless.
           </p>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function TeamPage() {
           <SectionHeader
             eyebrow="Executive Board"
             title="Organization leadership"
-            description="Executive board members appear first and are ordered by the master spreadsheet."
+            description="The executive board guides the organization, supports project teams, and keeps the member experience moving."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {boardMembers.map((person) => (
@@ -74,7 +74,7 @@ export default function TeamPage() {
           <SectionHeader
             eyebrow="Members"
             title="Additional member roster"
-            description="This section includes LBA/member records from the workbook where public roster details are still being reviewed."
+            description="Members contribute to the organization through projects, training, events, and community-building."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {generalMembers.map((person) => (

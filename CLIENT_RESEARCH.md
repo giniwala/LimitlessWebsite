@@ -9,6 +9,26 @@ This file tracks public research used to update the engagements and client-facin
 - Instagram did not expose reliable public post text through the research tool during this pass, so LinkedIn and public MSU/company pages are the main sources.
 - Do not publish internal workbook details, client deliverables, phone numbers, emails, or private recommendations without approval.
 
+## Homepage Client Showcase Research
+
+The homepage showcase is intentionally limited to public company milestones. It should not describe private Limitless project scope, deliverables, recommendations, or outcomes. The relationship to Limitless for this showcase comes from organization-provided direction; public milestone claims are verified separately below.
+
+| Client / org | Source used | Public facts verified | Claims left out / needs review | Confidence | Safe to publish? | Notes |
+|---|---|---|---|---|---|---|
+| BRCĒ | MSUToday: https://msutoday.msu.edu/news/2026/03/student-entrepreneurs-land-deal-shark-tank; MSU Burgess/Rice coverage: https://entrepreneurship.msu.edu/news/2026/04/14/material-tech-startup-brce-takes-home-grand-prize-at-rice-rice-business-plan-competition; BRCĒ website: https://www.brce.shop/ | MSU reported a 2026 Shark Tank appearance, a $300,000 accepted deal with Fawn Weaver and Daniel Lubetzky, and BRCĒ as an MSU-founded performance materials company. MSU Burgess/Rice coverage reported first place at Rice Business Plan Competition and $611,500 in total prizes. | User-provided “raised over $500K” was not published as fundraising because the best source says competition prizes, not a financing round. “Growing fast” was not published because it is vague. | High | Yes, public milestones only | Do not imply Limitless caused the Shark Tank deal, Rice prizes, or product growth. |
+| Zolli Candy | Official LinkedIn: https://www.linkedin.com/company/zolli-candy/; MEDC profile: https://www.michiganbusiness.org/reports-data/success-stories/zolli-candy/; website: https://zollicandy.com/ | Official LinkedIn describes Zolli as a consumer goods company available through retailers across the U.S., Amazon, and ten countries internationally. MEDC reports 25,000 U.S. stores, international distribution, Amazon growth, and zero-sugar/allergy-friendly positioning. | Exact current retailer list should be reviewed before naming specific stores beyond “U.S. retailers and Amazon.” | High | Yes, public milestones only | Use conservative wording around retail availability because channels can change. |
+| Cocomar | Cocomar website: https://www.cocomar.shop/; MSU Burgess e-Fest article: https://entrepreneurship.msu.edu/news/2026/04/20/student-startups-selected-to-compete-at-efest-national-competition; MSU Burgess/QEC article: https://entrepreneurship.msu.edu/news/two-ventures-put-michigans-entrepreneurial-ecosystem-on-globalstage; public Cocomar LinkedIn: https://www.linkedin.com/company/cocomar/ | Official site describes coconut-water-based protein smoothies created by MSU students. MSU Burgess reports Cocomar as a coconut water-based protein drink and selected for e-Fest 2026. MSU Burgess/QEC reports third place and a $5,000 award at Queen’s Entrepreneurs' Competition. | User-provided “first on the market” is not published as phrased. Michigan Collegiate Startup Competition prize amount is inconsistent with public LinkedIn snippets: user said $4,000+, while Cocomar LinkedIn snippet said 3rd place and $1,500. | High for product/QEC/e-Fest; low for MCSC amount | Yes, public milestones only | Use “coconut-water-based protein smoothie brand,” not broad market-first claims. |
+
+### Logo / Image Decision
+
+Board-provided client logo files were added from `assets-to-import` and copied into `public/images/clients`:
+
+- `public/images/clients/brce-logo.png`
+- `public/images/clients/zolli-candy-logo.png`
+- `public/images/clients/cocomar-logo.png`
+
+These are used only as visual identifiers on the homepage and Engagements page. If logo permission or quality is ever unclear, remove `logoSrc` from `src/data/clients.ts` and the card will fall back to a clean text treatment.
+
 ## Public Client / Engagement Notes
 
 | Client / org | Source used | Public description | What Limitless appears to have done | Confidence | Safe to publish? | Notes |

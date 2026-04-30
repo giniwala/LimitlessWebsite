@@ -2,7 +2,7 @@
 // searching through page components.
 export const siteCopy = {
   mission:
-    "Limitless Consulting helps student entrepreneurs and early-stage ventures think through business decisions while developing Michigan State students into thoughtful, practical consultants.",
+    "Student consulting for student entrepreneurs.",
   home: {
     heroEyebrow: "Student-led consulting at Michigan State University",
     heroTitle: "Limitless Consulting",
@@ -10,7 +10,7 @@ export const siteCopy = {
       "Helping founders and campus ventures pressure-test strategy, growth, operations, and market questions while developing practical student consultants.",
     whoWeAreTitle: "A student consulting group built around real founder questions.",
     whoWeAreDescription:
-      "Limitless Consulting connects student consultants with entrepreneurs, campus ventures, and growing companies through scoped advisory work, Town Halls, and practical problem-solving sessions.",
+      "Limitless is open to students from all majors. We connect students to MSU based founders and campus ventures.",
     audienceCards: [
       {
         title: "For student founders",
@@ -27,26 +27,26 @@ export const siteCopy = {
       {
         title: "For campus partners",
         description:
-          "Create a bridge between entrepreneurship resources, student talent, and founders who need thoughtful strategic support.",
+          "Collaborate with Broad Registered Student Organizations to support student entrepreneurship and democratize consulting paths.",
         icon: "handshake",
       },
     ],
     servicesPreview: {
       eyebrow: "Services",
-      title: "Focused support for early-stage ventures and student founders.",
+      title: "Focused support for student founders.",
       description: "Work is scoped around concrete decisions founders can discuss, test, or act on during a semester.",
     },
     engagementsPreview: {
-      eyebrow: "Engagements",
-      title: "Public examples from Town Halls and client conversations.",
+      eyebrow: "Past client highlights",
+      title: "Select organizations connected to our consulting work.",
       description:
-        "These examples use public sources and stay conservative about recommendations, deliverables, and outcomes.",
+        "To respect client confidentiality, we highlight publicly available company milestones rather than private engagement details.",
     },
     teamPreview: {
       eyebrow: "Team preview",
       title: "Meet the students building the organization.",
       description:
-        "Roster data comes from the master spreadsheet and can be edited in src/data/team.ts.",
+        "Meet the executive board members shaping client work, recruiting, operations, content, and member development.",
     },
     contactCta: {
       title: "Have a startup question?",
@@ -66,14 +66,14 @@ export const siteCopy = {
           "Help founders and early-stage ventures clarify business decisions while developing student consultants through practical, client-facing work.",
       },
       {
-        title: "Vision",
+        title: "Partnership",
         description:
-          "Become a trusted campus partner for entrepreneurship, consulting, and business development across Michigan State.",
+          "Work closely with Broad Registered Student Organizations to promote MSU startup community.",
       },
       {
         title: "Founding Story",
         description:
-          "TODO: Add the founding semester, founding members, original purpose, and any approved milestones.",
+          "Founded in the spring semester of 2021 by a group of students passionate about entrepreneurship and consulting.",
       },
     ],
     valuesIntro:
@@ -132,9 +132,9 @@ export const siteCopy = {
       "You are willing to practice feedback and revision.",
       "You want a smaller professional community on campus.",
     ],
-    timelineTitle: "Recruitment timeline placeholder",
+    timelineTitle: "A simple semester recruiting rhythm.",
     timelineDescription:
-      "TODO: Replace dates once the board confirms exact recruiting events for the semester.",
+      "Exact dates change by semester, but the process usually moves from information sessions to applications, interviews, and onboarding.",
     timeline: [
       { date: "Week 1", title: "Info sessions and coffee chats" },
       { date: "Week 2", title: "Application deadline and first-round review" },
@@ -186,15 +186,17 @@ export const siteCopy = {
   },
   engagements: {
     eyebrow: "Engagements",
-    title: "Public engagement examples, written conservatively.",
+    title: "Selected organizations connected to our work.",
     description:
-      "These examples are based on public Limitless posts and public client context. They do not reveal private recommendations or claim unapproved results.",
-    sectionTitle: "Engagement cards",
+      "We showcase past companies at a high level while keeping private scopes, recommendations, deliverables, and outcomes confidential.",
+    sectionTitle: "Past companies, shown with care.",
     sectionDescription:
-      "Keep this format consistent: public client context, business question, discussion approach, possible outputs, and publication notes.",
-    confidentialityTitle: "Publish only what clients approve.",
+      "These public cards focus on company identity and broad category rather than internal consulting details.",
+    confidentialityTitle: "Private work stays private.",
     confidentialityDescription:
-      "Public Town Hall participation is safe to describe at a high level. Specific recommendations, files, metrics, or outcomes should only be added after client approval.",
+      "Names, logos, and broad categories are shown only when appropriate to publish. Detailed scopes, recommendations, deliverables, and outcomes should stay private unless a client explicitly approves a case study.",
+    confidentialityNote:
+      "This keeps the page useful for visitors while protecting founders, clients, and student teams from accidental over-disclosure.",
   },
   contact: {
     eyebrow: "Contact",
@@ -203,6 +205,6 @@ export const siteCopy = {
       "Reach out about client engagements, recruitment, partnerships, alumni support, or general questions.",
     formTitle: "Tell us what you are looking for.",
     formDescription:
-      "This form opens your email app for now. Later, you can connect it to Formspree, Resend, or a Vercel server action.",
+      "Share a few details and your email app will open with a prepared note to the Limitless team.",
   },
 } as const;
