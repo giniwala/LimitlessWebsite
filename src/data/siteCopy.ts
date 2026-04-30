@@ -1,209 +1,222 @@
 // Major website copy lives here so future board members can update text without
 // searching through page components.
 export const siteCopy = {
-  mission:
-    "Student consulting for student entrepreneurs.",
+  mission: "Townhalls, Workshops, and startup strategy for MSU student founders.",
   home: {
-    heroEyebrow: "Student-led consulting at Michigan State University",
+    heroEyebrow: "MSU founders. Real challenges. Student strategy.",
     heroTitle: "Limitless Consulting",
     heroDescription:
-      "Helping founders and campus ventures pressure-test strategy, growth, operations, and market questions while developing practical student consultants.",
-    whoWeAreTitle: "A student consulting group built around real founder questions.",
+      "Founders pitch at open Townhalls, students brainstorm the business problems in the room, and Thursday Workshops turn promising ideas into deeper support.",
+    whoWeAreTitle: "A consulting organization built around the moment a founder asks, \"What should we do next?\"",
     whoWeAreDescription:
-      "Limitless is open to students from all majors. We connect students to MSU based founders and campus ventures.",
+      "Limitless connects MSU student entrepreneurs with students from every major. Townhalls are open to anyone; consulting projects and Workshops give members a deeper way to practice startup strategy.",
     audienceCards: [
       {
         title: "For student founders",
         description:
-          "Scope a concrete business question, pressure-test assumptions, and leave with practical recommendations your team can use.",
+          "Bring a real business, pitch the room, and leave with sharper questions, fresh perspectives, and a path toward Workshop support.",
         icon: "briefcase",
       },
       {
-        title: "For student consultants",
+        title: "For curious students",
         description:
-          "Build consulting fundamentals through research, client communication, slide writing, financial thinking, and team-based problem solving.",
+          "Sit in on Townhall, hear from student founders, and practice solving messy startup questions before you ever join a project team.",
         icon: "graduationCap",
       },
       {
         title: "For campus partners",
         description:
-          "Collaborate with Broad Registered Student Organizations to support student entrepreneurship and democratize consulting paths.",
+          "Collaborate on founder-facing events, pitch practice, and entrepreneurship programming across the MSU ecosystem.",
         icon: "handshake",
       },
     ],
     servicesPreview: {
-      eyebrow: "Services",
-      title: "Focused support for student founders.",
-      description: "Work is scoped around concrete decisions founders can discuss, test, or act on during a semester.",
+      eyebrow: "Core services",
+      title: "Four ways we help founders turn questions into next steps.",
+      description:
+        "Our work stays focused: market research, go-to-market strategy, business model development, and financial modeling.",
     },
     engagementsPreview: {
-      eyebrow: "Past client highlights",
-      title: "Select organizations connected to our consulting work.",
+      eyebrow: "Founder showcase",
+      title: "Select organizations connected to Limitless programming and consulting work.",
       description:
-        "To respect client confidentiality, we highlight publicly available company milestones rather than private engagement details.",
+        "We highlight public company context and founder milestones, not private project scopes or confidential recommendations.",
+    },
+    mediaPreview: {
+      eyebrow: "Limitless in motion",
+      title: "A consulting org with a real voice.",
+      description:
+        "Our LinkedIn is part meeting recap, part founder signal, part student humor. The feed makes the organization feel alive between Townhalls.",
     },
     teamPreview: {
-      eyebrow: "Team preview",
-      title: "Meet the students building the organization.",
+      eyebrow: "Leadership",
+      title: "Meet the board and project leads behind the room.",
       description:
-        "Meet the executive board members shaping client work, recruiting, operations, content, and member development.",
+        "The public team page focuses on executive board members and project managers guiding Townhalls, Workshops, recruiting, and client support.",
     },
     contactCta: {
-      title: "Have a startup question?",
+      title: "Have a founder challenge for the room?",
       description:
-        "Send a quick note and the team can help determine whether a semester engagement is the right fit.",
+        "Tell us what you are building, what decision feels stuck, and whether a Townhall or Workshop could help.",
     },
   },
   about: {
     eyebrow: "About",
-    title: "Student consultants helping student founders move with more clarity.",
+    title: "Student consulting for student entrepreneurs.",
     description:
-      "Limitless Consulting exists to give Michigan State students meaningful consulting experience while supporting student entrepreneurs, campus ventures, and early-stage companies connected to the MSU ecosystem.",
+      "Built around open Townhalls, founder-facing Workshops, and practical learning for students from every background.",
     cards: [
       {
         title: "Mission",
         description:
-          "Help founders and early-stage ventures clarify business decisions while developing student consultants through practical, client-facing work.",
+          "Help student founders make clearer business decisions while giving MSU students hands-on experience with startup strategy.",
       },
       {
-        title: "Partnership",
+        title: "Model",
         description:
-          "Work closely with Broad Registered Student Organizations to promote MSU startup community.",
+          "Founders pitch at Townhalls, share real challenges, and receive student feedback.",
       },
       {
-        title: "Founding Story",
+        title: "Community",
         description:
-          "Founded in the spring semester of 2021 by a group of students passionate about entrepreneurship and consulting.",
+          "Limitless connects entrepreneurs, consultants, student organizations, and campus partners across the MSU startup ecosystem.",
       },
     ],
     valuesIntro:
-      "The organization is designed around practical startup support, deliberate member development, and a maintainable student-led operating model.",
+      "What makes Limitless different is not a deck template. It is the room: founders, students, questions, and live problem solving.",
     values: [
       {
-        title: "Useful work",
+        title: "Founder proximity",
         description:
-          "We focus on questions founders can understand, prioritize, and move forward on without overcomplicating the next step.",
-        icon: "lightbulb",
-      },
-      {
-        title: "Professional growth",
-        description:
-          "Members learn by doing, with coaching, feedback, and real responsibility on project teams.",
-        icon: "graduationCap",
-      },
-      {
-        title: "Student-led ownership",
-        description:
-          "Students run the organization, manage client work, and build systems future boards can improve.",
+          "Students learn from founders who are actively building, not from abstract cases alone.",
         icon: "users",
       },
       {
-        title: "Clear communication",
+        title: "Open access",
         description:
-          "Strong consulting starts with expectations, synthesis, and honest client conversations.",
+          "Townhalls are open to anyone who wants to listen, ask better questions, and practice business thinking.",
+        icon: "megaphone",
+      },
+      {
+        title: "Practical output",
+        description:
+          "Workshops and projects stay close to decisions founders can actually discuss, test, or revise.",
         icon: "checkCircle",
       },
+      {
+        title: "Student-led taste",
+        description:
+          "The organization is professional, but it still sounds like the students who built it.",
+        icon: "sparkles",
+      },
     ],
-    developmentTitle: "Built for the experience students wish they had before internships.",
+    developmentTitle: "Students learn startup strategy by being close to startup uncertainty.",
     developmentDescription:
-      "Members get repeated practice with the skills that show up in consulting, startups, operations, finance, marketing, and strategy roles.",
+      "Members practice the same skills they will need in consulting, finance, product, marketing, operations, and founder-facing roles.",
     developmentSkills: [
-      "Structured problem solving",
-      "Client communication",
-      "Slide writing and storytelling",
+      "Live problem framing",
+      "Founder communication",
       "Market and customer research",
-      "Financial and operating analysis",
-      "Project management and feedback",
+      "Go-to-market thinking",
+      "Financial and business modeling",
+      "Workshop facilitation",
     ],
   },
   join: {
     eyebrow: "Join",
-    title: "Learn consulting by working on real startup questions.",
+    title: "Start by showing up to Townhall. Grow by helping founders work through real questions.",
     description:
-      "We recruit students who are curious, dependable, team-oriented, and excited to build skills through practical work.",
-    whoShouldApplyTitle: "No single major or background owns consulting.",
+      "Limitless recruits students who are curious, reliable, and excited to learn startup strategy through live founder conversations and project work.",
+    whoShouldApplyTitle: "You do not need a consulting background to add value in the room.",
     whoShouldApplyDescription:
-      "We want students who can learn quickly, communicate clearly, and bring different perspectives to startup problems.",
+      "We look for students who ask thoughtful questions, learn quickly, and can turn founder uncertainty into structured thinking.",
     applicantTraits: [
-      "You enjoy breaking down ambiguous questions.",
-      "You want client-facing experience before internships.",
-      "You care about entrepreneurship and student founders.",
-      "You can be reliable on a project team.",
-      "You are willing to practice feedback and revision.",
-      "You want a smaller professional community on campus.",
+      "You like listening to founders explain what is hard right now.",
+      "You can break ambiguous startup questions into smaller pieces.",
+      "You want practical experience before internships.",
+      "You bring a perspective from any major, not just business.",
+      "You can be consistent on a project team.",
+      "You want a smaller, high-energy entrepreneurship community on campus.",
     ],
-    timelineTitle: "A simple semester recruiting rhythm.",
+    timelineTitle: "A semester rhythm built around access first, membership second.",
     timelineDescription:
-      "Exact dates change by semester, but the process usually moves from information sessions to applications, interviews, and onboarding.",
+      "Townhalls stay open to anyone. Consulting team recruiting adds interviews, onboarding, and project matching for students who want deeper involvement.",
     timeline: [
-      { date: "Week 1", title: "Info sessions and coffee chats" },
-      { date: "Week 2", title: "Application deadline and first-round review" },
-      { date: "Week 3", title: "Interviews, offers, and onboarding" },
+      { date: "Week 1", title: "Attend Townhall and meet current members" },
+      { date: "Week 2", title: "Apply for the consulting team" },
+      { date: "Week 3", title: "Interview, onboard, and join project work" },
     ],
-    processTitle: "Clear steps, fair expectations.",
+    processTitle: "Clear steps, real expectations.",
     processDescription:
-      "Keep the process transparent so applicants know what to prepare and how decisions are made.",
+      "The process is designed to see how you think, communicate, and show up for a team.",
     processSteps: [
       {
-        title: "Interest form and info session",
+        title: "Attend or learn about Townhall",
         description:
-          "Meet current members, learn about projects, and decide whether the semester commitment fits.",
+          "See the founder-facing model, meet members, and decide whether the semester commitment fits.",
       },
       {
-        title: "Written application",
+        title: "Submit the application",
         description:
-          "Share your background, motivation, problem-solving style, and availability.",
+          "Share your background, curiosity, availability, and why the startup setting interests you.",
       },
       {
         title: "Interview or case conversation",
         description:
-          "Discuss a lightweight business prompt and how you communicate your thinking.",
+          "Talk through a lightweight business prompt and show how you structure your thinking.",
       },
       {
-        title: "Onboarding and project matching",
+        title: "Onboard into Workshops and teams",
         description:
-          "New members join training, meet their project team, and begin the first engagement cycle.",
+          "New members learn the toolkit, join a project group, and start supporting founders.",
       },
     ],
   },
   services: {
     eyebrow: "Services",
-    title: "Consulting support for founders, campus ventures, and growing startups.",
+    title: "Startup support that starts with the founder's actual question.",
     description:
-      "We help student entrepreneurs and early-stage teams clarify choices, gather evidence, and prepare practical next steps through scoped consulting work and discussion-based advisory sessions.",
-    capabilitiesTitle: "A flexible menu for semester-length engagements",
+      "Limitless focuses on four practical service areas that fit student founders, semester timelines, and Workshop-style collaboration.",
+    capabilitiesTitle: "Four focused consulting lanes",
     capabilitiesDescription:
-      "Each engagement should be scoped tightly enough for a student team to produce a useful deliverable within the academic calendar.",
-    processTitle: "A simple consulting rhythm founders can follow.",
+      "We keep the service menu tight so founders know what to ask for and student teams can deliver useful work.",
+    programmingTitle: "Services live inside a broader founder-facing rhythm.",
+    programmingDescription:
+      "Townhalls create the spark. Workshops, collaborations, and skill-building sessions turn that energy into practice.",
+    processTitle: "From Townhall challenge to Workshop support.",
     processDescription:
-      "This process keeps expectations clear while leaving room to adapt to each startup's actual needs.",
+      "The model keeps the work concrete: hear the founder, name the challenge, pressure-test options, and build toward the next decision.",
     processSteps: [
-      ["1", "Scope the question", "Define the decision, timeline, data available, and final deliverable."],
-      ["2", "Research and diagnose", "Run interviews, secondary research, analysis, and team working sessions."],
-      ["3", "Synthesize recommendations", "Turn findings into clear options, tradeoffs, and next steps."],
-      ["4", "Deliver and transfer", "Present the work and leave founders with editable files and assumptions."],
+      ["1", "Hear the pitch", "The founder explains the business, customer, traction, and current context."],
+      ["2", "Frame 1-3 challenges", "The room focuses on the questions that matter most right now."],
+      ["3", "Brainstorm live", "Students surface perspectives, risks, ideas, and clarifying questions."],
+      ["4", "Go deeper in Workshop", "Consultants help turn the best threads into research, models, or next-step support."],
     ],
   },
   engagements: {
     eyebrow: "Engagements",
-    title: "Selected organizations connected to our work.",
+    title: "Past founder and community organizations.",
     description:
-      "We showcase past companies at a high level while keeping private scopes, recommendations, deliverables, and outcomes confidential.",
-    sectionTitle: "Past companies, shown with care.",
+      "This page is a public-safe showcase of organizations connected to Limitless programming and consulting work.",
+    sectionTitle: "Companies, founders, and campus ventures",
     sectionDescription:
-      "These public cards focus on company identity and broad category rather than internal consulting details.",
-    confidentialityTitle: "Private work stays private.",
-    confidentialityDescription:
-      "Names, logos, and broad categories are shown only when appropriate to publish. Detailed scopes, recommendations, deliverables, and outcomes should stay private unless a client explicitly approves a case study.",
-    confidentialityNote:
-      "This keeps the page useful for visitors while protecting founders, clients, and student teams from accidental over-disclosure.",
+      "Cards show public company context only. Private recommendations, decks, deliverables, and internal project details stay off the website.",
+  },
+  media: {
+    eyebrow: "Limitless in motion",
+    pageTitle: "Limitless in Motion",
+    pageDescription:
+      "A curated look at the Townhall recaps, recruiting moments, and LinkedIn personality that make Limitless feel different from a typical consulting club.",
+    sectionTitle: "The posts, recaps, and oddball moments that make Limitless feel alive.",
+    sectionDescription:
+      "Browse a rotating showcase of public posts from the official Limitless LinkedIn.",
   },
   contact: {
     eyebrow: "Contact",
-    title: "Start the conversation with Limitless Consulting.",
+    title: "Reach out to us!",
     description:
-      "Reach out about client engagements, recruitment, partnerships, alumni support, or general questions.",
-    formTitle: "Tell us what you are looking for.",
+      "Contact us about Townhalls, Workshops, consulting, partnerships, recruiting, alumni help, or general questions.",
+    formTitle: "Tell us what you are building or asking.",
     formDescription:
       "Share a few details and your email app will open with a prepared note to the Limitless team.",
   },

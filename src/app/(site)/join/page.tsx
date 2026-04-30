@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { ArrowRight, CalendarDays, CheckCircle2, Mail } from "lucide-react";
 import { ButtonLink } from "@/components/common/button-link";
 import { SectionHeader } from "@/components/common/section-header";
+import { TeamPhotoCollage } from "@/components/sections/team-photo-collage";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { faqs } from "@/data/faqs";
 import { siteConfig } from "@/data/siteConfig";
 import { siteCopy } from "@/data/siteCopy";
+import { joinTeamPhotos } from "@/data/teamPhotos";
 
 export const metadata: Metadata = {
   title: "Join",
@@ -56,6 +58,13 @@ export default function JoinPage() {
         </div>
       </section>
 
+      <TeamPhotoCollage
+        photos={joinTeamPhotos}
+        eyebrow="Student experience"
+        title="You learn by sitting close to real startup uncertainty."
+        description="Townhall gives any student a low-pressure way to listen and contribute. Membership adds Workshop support, project responsibility, and more reps with founders."
+      />
+
       <section className="bg-surface-muted py-20">
         <div className="container-page">
           <SectionHeader
@@ -101,7 +110,7 @@ export default function JoinPage() {
       <section className="bg-surface py-20">
         <div className="container-page">
           <SectionHeader
-            eyebrow="FAQ preview"
+            eyebrow="Applicant questions"
             title="Common recruiting questions"
             description="See the full FAQ page for client, member experience, and general questions."
           />

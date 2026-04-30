@@ -35,7 +35,7 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-semibold text-foreground">Connect</h2>
           <p className="mt-4 text-sm leading-6 text-muted">
-            Follow Limitless for Town Halls, recruiting updates, and student founder highlights.
+            Follow Limitless for Townhalls, recruiting updates, and student founder highlights.
           </p>
           <SocialLinks className="mt-4" showEmail variant="compact" />
         </div>
@@ -43,7 +43,7 @@ export function Footer() {
       <div className="border-t border-border py-5">
         <div className="container-page flex flex-col gap-2 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Limitless Consulting. All rights reserved.</p>
-          <p>Contact us at RSO.Limitless@msu.edu</p>
+          <p>Contact us at {siteConfig.contact.email}</p>
         </div>
       </div>
     </footer>

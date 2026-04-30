@@ -28,6 +28,7 @@ The portal intentionally does not use Supabase or user accounts right now. A sha
 - `/team`
 - `/services`
 - `/engagements`
+- `/media`
 - `/join`
 - `/faq`
 - `/contact`
@@ -116,7 +117,7 @@ Edit `src/data/siteCopy.ts` for major text blocks:
 - Homepage hero and Who We Are copy
 - About page mission, vision, values, and development copy
 - Services intro and process copy
-- Engagements intro and confidentiality copy
+- Engagements intro and public company showcase copy
 - Join page recruiting copy
 - Contact page copy
 
@@ -127,6 +128,15 @@ Edit `src/data/stats.ts`. Keep placeholder numbers marked until verified.
 ### Services
 
 Edit `src/data/services.ts`. The homepage preview and Services page use the same source.
+
+The public service menu is intentionally limited to four core services:
+
+- Market Research
+- Go-To-Market Strategy
+- Business Model Development
+- Financial Modeling
+
+Other programming, such as Townhalls, Thursday Workshops, collaboration events, and pitch/case-style learning sessions, lives in `src/data/limitlessModel.ts`.
 
 Each service includes:
 
@@ -145,6 +155,7 @@ Use `src/data/clients.ts` for client/company cards:
 - `name`
 - `category`
 - `websiteUrl`
+- `primaryLinkLabel`
 - `linkedInUrl`
 - `logoSrc`
 - `logoAlt`
@@ -176,6 +187,10 @@ Client logos live in `public/images/clients`. Current client logos:
 - `brce-logo.png`
 - `zolli-candy-logo.png`
 - `cocomar-logo.png`
+- `dawn-coldbridge-logo.png`
+- `powerly-logo.png`
+- `necessities-logo.png` (stored for review; not displayed until approved)
+- `guideily-logo.png` (stored for review; not displayed until approved)
 
 To replace or add a logo:
 
@@ -214,6 +229,13 @@ Each member can include:
 
 Executive Board members appear first when `category: "Executive Board"` and lower `order` values are used.
 
+The public Team page currently displays only:
+
+- `category: "Executive Board"`
+- `category: "Project Manager"`
+
+Consultants and general members can stay in `src/data/team.ts` for internal recordkeeping, but they are not rendered publicly unless the Team page logic changes.
+
 ### Team Majors, Bios, and LinkedIn Review
 
 Majors and bios also live in `src/data/team.ts`.
@@ -247,6 +269,50 @@ imagePosition: "50% 24%"
 ```
 
 This value maps to CSS `object-position`. The first number is horizontal position; the second controls vertical framing.
+
+Temporary or replacement headshots can be dropped into `assets-to-import/Limitless Headshots` first. Match the file to the member by full name, copy the approved image into `public/images/team`, rename it to lowercase hyphenated format, and then update `image` in `src/data/team.ts`.
+
+### Team Photos
+
+Approved group/event photos live in `public/images/team-photos` and are configured in `src/data/teamPhotos.ts`.
+
+Use these photos for:
+
+- Homepage hero slideshow through `src/data/hero.ts`
+- The Limitless Model carousel
+- About page collage
+- Join page student experience collage
+
+To add a new team photo:
+
+1. Put the raw image in `assets-to-import/team-photos`.
+2. Export or copy an optimized version into `public/images/team-photos`.
+3. Use a lowercase hyphenated filename.
+4. Add alt text and optional `objectPosition` in `src/data/teamPhotos.ts` or `src/data/hero.ts`.
+
+Recommended size: around `1400-1800px` on the long edge, compressed enough to stay under roughly `700KB` when possible.
+
+The hero slideshow order is deterministic. Keep `team-group-photo` first in `src/data/hero.ts` if that should remain the first image visitors see on fresh page load.
+
+### Limitless Model Content
+
+The "How Limitless Works" / "Limitless Model" content lives in `src/data/limitlessModel.ts`.
+
+Edit this file when the organization changes how Townhalls, Workshops, collaboration events, or training sessions are described. Keep the copy concrete and specific to Limitless.
+
+### Media / Content Page
+
+The `/media` page and homepage "Limitless in Motion" section are powered by `src/data/socialUpdates.ts`.
+
+This is a manually curated thumbnail carousel, not a live LinkedIn or Instagram feed. To update it:
+
+1. Add the official LinkedIn post URL in `linkedInUrl`.
+2. Write a short `title`, `eyebrow`, and `caption`.
+3. Add a thumbnail image to `public/images/media` and reference it with `thumbnailSrc`.
+4. Set `featured: true` only for posts that should appear on the homepage.
+5. Do not download or autoplay LinkedIn videos unless the board owns the original video asset and has permission to host it.
+
+If you later add direct video files, place approved files in `public/videos/media`, set `videoSrc` in `src/data/socialUpdates.ts`, keep playback muted and `playsInline`, and provide a static thumbnail for reduced-motion users. Without a local `videoSrc`, the carousel uses thumbnails and links visitors to the official LinkedIn post.
 
 ### Member Portal Resources
 
@@ -328,6 +394,8 @@ Final brand assets used by the website live in `public/brand`:
 
 The navbar and footer use `siteConfig.brand.logoPath`, with a JPEG and simple text fallback.
 
+The production SVG logo uses a compound path with `fill-rule="evenodd"` / `clip-rule="evenodd"` so the inner infinity holes are transparent cutouts. Do not add separate white circles or white paths to fake the negative space, because those will show up as light blobs on dark, image, or transparent backgrounds.
+
 Logo motion is used subtly in the final CTA. It is muted, looped, inline, and hidden for reduced-motion users through CSS.
 
 The browser tab and app icons live in:
@@ -364,9 +432,12 @@ Recommended folders:
 - `public/brand`: approved logo and motion assets.
 - `public/brand/motion`: approved MP4 animation files.
 - `public/images/hero`: group photos for the homepage slideshow.
+- `public/images/team-photos`: approved group, Townhall, Workshop, and event photos used across pages.
 - `public/images/board`: optional board-specific photos.
 - `public/images/team`: standardized team headshots.
 - `public/images/clients`: approved client/case study visuals only.
+- `public/images/media`: curated thumbnails for the Media page and homepage media carousel.
+- `public/videos/media`: optional approved local video files for posts the board has permission to host.
 - `public/images/social`: optional custom social media logo assets.
 
 Asset rules:

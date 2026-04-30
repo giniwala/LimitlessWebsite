@@ -2,12 +2,36 @@ export type HeroImage = {
   src: string;
   alt: string;
   label?: string;
+  objectPosition?: string;
 };
 
-// Add group photos here after placing them in public/images/hero.
-// Example:
-// { src: "/images/hero/spring-2026-board.jpg", alt: "Limitless Consulting board in Spring 2026" }
-export const heroImages: HeroImage[] = [];
+// Homepage hero slideshow. These use approved team/event photos copied into public/images/team-photos.
+export const heroImages: HeroImage[] = [
+  {
+    src: "/images/team-photos/team-group-photo.jpeg",
+    alt: "Limitless Consulting group photo.",
+    label: "Limitless team",
+    objectPosition: "50% 42%",
+  },
+  {
+    src: "/images/team-photos/team-03.jpeg",
+    alt: "Limitless students collaborating in a workshop setting.",
+    label: "Workshop",
+    objectPosition: "50% 45%",
+  },
+  {
+    src: "/images/team-photos/team-07.jpeg",
+    alt: "Limitless members gathered around tables during an organization event.",
+    label: "Student strategy",
+    objectPosition: "50% 50%",
+  },
+  {
+    src: "/images/team-photos/team-10.jpeg",
+    alt: "Limitless members listening during a founder-focused meeting.",
+    label: "Townhall",
+    objectPosition: "50% 42%",
+  },
+];
 
 // Used when no local hero images have been added yet.
 export const heroFallbackImage: HeroImage = {

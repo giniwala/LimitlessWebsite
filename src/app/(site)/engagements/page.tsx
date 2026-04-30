@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ClientHighlightCard } from "@/components/client-highlight-card";
 import { CTA } from "@/components/common/cta";
 import { SectionHeader } from "@/components/common/section-header";
@@ -18,12 +17,11 @@ export default function EngagementsPage() {
       <section className="bg-brand-deep py-20 text-white">
         <div className="container-page relative overflow-hidden">
           <div className="pointer-events-none absolute -right-16 top-0 hidden size-72 opacity-[0.08] mix-blend-screen lg:block">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/brand/limitless-logo.svg"
               alt=""
-              fill
-              sizes="288px"
-              className="object-contain"
+              className="h-full w-full object-contain"
             />
           </div>
           <p className="text-sm font-semibold uppercase text-brand-soft">{siteCopy.engagements.eyebrow}</p>
@@ -43,25 +41,10 @@ export default function EngagementsPage() {
             title={siteCopy.engagements.sectionTitle}
             description={siteCopy.engagements.sectionDescription}
           />
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {publishedClientHighlights.map((client) => (
-              <ClientHighlightCard key={client.name} client={client} showHighlights={false} />
+              <ClientHighlightCard key={client.name} client={client} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-surface-muted py-20">
-        <div className="container-page grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <SectionHeader
-            eyebrow="Client privacy"
-            title={siteCopy.engagements.confidentialityTitle}
-            description={siteCopy.engagements.confidentialityDescription}
-          />
-          <div className="rounded-lg border border-border bg-surface p-6 shadow-subtle">
-            <p className="text-sm leading-7 text-muted">
-              {siteCopy.engagements.confidentialityNote}
-            </p>
           </div>
         </div>
       </section>

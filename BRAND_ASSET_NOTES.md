@@ -4,8 +4,8 @@ Approved website brand files live in `public/brand`.
 
 ## Current Files
 
-- `public/brand/limitless-logo.svg`: primary crisp logo mark.
-- `public/brand/limitless-mark.svg`: same primary mark used by metadata and decorative treatments.
+- `public/brand/limitless-logo.svg`: primary crisp logo mark with transparent infinity cutouts.
+- `public/brand/limitless-mark.svg`: same corrected primary mark used by metadata and decorative treatments.
 - `public/brand/limitless-logo.jpeg`: fallback logo image.
 - `public/brand/limitless-white-on-green.png`: static fallback/poster for motion.
 - `public/brand/limitless-app-icon.png`: high-resolution app icon source.
@@ -25,6 +25,7 @@ Approved website brand files live in `public/brand`.
 ## Usage Guidance
 
 - Use SVG for navigation, footer, and crisp decorative marks.
+- Keep the infinity holes as transparent cutouts. The production SVG uses a compound path with `fill-rule="evenodd"` / `clip-rule="evenodd"` instead of separate white filler shapes.
 - Use low-opacity SVG marks as subtle watermarks in high-impact sections only.
 - Use MP4 only in limited, low-distraction placements.
 - Keep video muted, looped, inline, and paired with a static poster.
@@ -36,10 +37,23 @@ Approved website brand files live in `public/brand`.
 
 - Navbar and footer use the real Limitless logo through `BrandLogo`.
 - The homepage hero uses a low-opacity logo watermark behind the content.
+- The homepage hero now uses approved Limitless team/event photos rather than a generic stock fallback.
+- The Limitless Model section uses a single-photo carousel and subtle depth cards to explain the Townhall-to-Workshop flow.
 - The homepage client showcase uses a subtle oversized logo motif.
 - The Engagements hero uses a quiet logo watermark.
 - The final CTA uses the `animation-02` motion asset with a static fallback.
-- Browser tabs and app icons use the Limitless logo rather than the old “LC” mark.
+- Browser tabs and app icons use the Limitless logo rather than the old "LC" mark.
+
+## Motion And Depth Pattern
+
+This pass uses lightweight CSS only:
+
+- `.depth-card` adds a restrained hover lift/tilt to client, model, media, and photo cards.
+- Hero slideshow rotation pauses for users who prefer reduced motion.
+- Photo and media carousel auto-rotation pauses on hover/focus and stops for reduced-motion users.
+- Logo floating animation and depth transforms are disabled under `prefers-reduced-motion`.
+
+Avoid adding heavy 3D dependencies unless the site needs a truly interactive 3D scene later. For this brand, subtle depth works better than spectacle.
 
 ## Replacing The Browser Tab Icon
 

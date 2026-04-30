@@ -13,12 +13,15 @@ This file tracks public profile research used for team majors, bios, and LinkedI
 | Ayush Ranka | https://www.linkedin.com/in/rankaayu | Medium | Added bio. | Public profile supports Limitless/MSU business involvement; major was not explicit enough to publish. |
 | Adi Giniwala | https://www.linkedin.com/in/adiginiwala | High | Added Finance and bio. | Public profile states Finance at MSU and EY experience. |
 | Caleb Lake | https://www.linkedin.com/in/caleb-lake | High | Added Marketing and bio. | Public profile states Marketing at MSU and Mosea experience. |
-| Cooper Gheen | https://www.linkedin.com/in/cgheen | High | Added bio. | Public profile supports Limitless founder and Gheen & Noyes Advisory language. |
-| Megan Howarth | https://www.linkedin.com/in/meganhowarth04 | High | Added Creative Advertising and bio. | Public profile states Creative Advertising and Limitless recruiting role. |
+| Cooper Gheen | https://www.linkedin.com/in/cgheen and local uploaded headshot | High | Added bio and public headshot. | Public profile supports Limitless founder and Gheen & Noyes Advisory language; headshot filename matches the existing roster name. |
+| Megan Howarth | https://www.linkedin.com/in/meganhowarth04 and local uploaded headshot | High | Added Creative Advertising, bio, and public headshot. | Public profile states Creative Advertising and Limitless recruiting role; headshot filename matches the existing roster name. |
 | Amir Yergeshbay | https://www.linkedin.com/in/amir-yergeshbay | High | Added Marketing and bio. | Public profile states Marketing at MSU and Phi Chi Theta marketing leadership. |
 | Raashid Ahmed | https://www.linkedin.com/in/raashidnahmed | Medium | Added bio. | Public profile supports Limitless, Global Community Scholars, and multilingual background. Major was not explicit enough to publish. |
 | Adrian Monter | https://www.linkedin.com/in/adrian-monter- | Medium | Added bio. | Public profile supports TI Automotive/MSU context. Future graduating-role language should be reviewed before adding. |
+| Krishi Shah | https://www.linkedin.com/in/krishi-shah-9447a9282 | High | Added Supply Chain Management, LinkedIn, and bio. | Public profile supports Supply Chain Management, Tower Guard leadership, and Limitless project manager role. |
 | Melvin Toe | https://www.linkedin.com/in/lawpan-melvin-toe | High | Added Information Science and bio. | Public profile states Information Science at MSU with data minor and McKinsey experience. |
+| Patrick Southwick | Local uploaded headshot: `assets-to-import/Limitless Headshots/patrick-southwick.jpeg` | High | Added public headshot. | Headshot filename matches the full name already used in `src/data/team.ts`. LinkedIn/major still need review. |
+| Pooja Chandrashekar | Local uploaded headshot: `assets-to-import/Limitless Headshots/Pooja-Chandrashekar.jpeg` | High | Added public headshot. | Headshot filename matches the full name already used in `src/data/team.ts`. LinkedIn/major still need review. |
 | Ronith Arum | https://www.linkedin.com/in/ronith-arum and https://capstone.cse.msu.edu/2025-08/other-links/downloads/design-day-name-badges.pdf | High | Added Computer Science and bio. | Public MSU CSE capstone materials support Computer Science and technical framing. |
 | Alivia Burlingame | https://www.linkedin.com/in/alivia-burlingame-3800492a3 | Medium | Added bio. | Public profile supports Limitless and Dean's List language; major was not explicit enough to publish. |
 | Anirudh Ale | https://www.linkedin.com/in/anirudh-ale-68845522a | High | Added bio. | Public profile supports BCG, Broad, Limitless, and DECA business-plan language. |
@@ -35,10 +38,9 @@ This file tracks public profile research used for team majors, bios, and LinkedI
 
 | Member | Current status | What to review |
 |---|---|---|
-| Zack Truszkowski | No confident LinkedIn/bio added. | Confirm LinkedIn, major, and approved bio. |
-| Krishi Shah | No confident LinkedIn/bio added. | Confirm LinkedIn, major, and approved bio. |
-| Patrick | First-name-only workbook row. | Confirm full name, headshot, LinkedIn, major, and approved bio. |
-| Pooja | First-name-only workbook row. | Confirm full name, headshot, LinkedIn, major, and approved bio. |
+| Zack Truszkowski | Neutral bio added from local role only; no confident LinkedIn. | Confirm LinkedIn, major, and approved bio. |
+| Patrick Southwick | Neutral PM bio added from local role only; temporary headshot added. | Confirm LinkedIn, major, and approved bio. |
+| Pooja Chandrashekar | Neutral PM bio added from local role only; temporary headshot added. | Confirm LinkedIn, major, and approved bio. |
 | Adam White | No confident LinkedIn/bio added. | Confirm LinkedIn, major, and approved bio. |
 | Anisa | First-name-only workbook row. | Confirm full name, headshot, LinkedIn, major, and approved bio. |
 | Faisal | First-name-only workbook row. | Confirm full name, headshot, LinkedIn, major, and approved bio. |

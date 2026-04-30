@@ -45,7 +45,7 @@ export default function ContactPage() {
             <div className="mt-8 rounded-lg border border-border bg-surface p-5 shadow-subtle">
               <p className="text-sm font-semibold uppercase text-accent">Follow our work</p>
               <p className="mt-2 text-sm leading-6 text-muted">
-                See public Town Hall updates, recruiting reminders, and organization news on our official social channels.
+                See public Townhall updates, recruiting reminders, and organization news on our official social channels.
               </p>
               <SocialLinks className="mt-4" />
             </div>

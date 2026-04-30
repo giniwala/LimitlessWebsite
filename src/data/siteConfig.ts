@@ -52,6 +52,7 @@ export const publicNav: NavItem[] = [
   { label: "Team", href: "/team" },
   { label: "Services", href: "/services" },
   { label: "Engagements", href: "/engagements" },
+  { label: "Media", href: "/media" },
   { label: "Join", href: "/join" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },

@@ -73,6 +73,14 @@ select {
   animation: infinity-float 12s ease-in-out infinite;
 }
 
+.depth-card {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
 @keyframes reveal-up {
   from {
     opacity: 0;
@@ -96,9 +104,23 @@ select {
   }
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .depth-card:hover {
+    transform: translateY(-6px) rotateX(0.7deg) rotateY(-0.7deg);
+    box-shadow: 0 22px 55px rgb(16 35 29 / 0.12);
+    border-color: rgb(31 122 140 / 0.32);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-reveal,
   .animate-infinity-float {
     animation: none;
+  }
+
+  .depth-card,
+  .depth-card:hover {
+    transform: none;
+    transition: none;
   }
 }

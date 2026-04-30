@@ -1,5 +1,4 @@
 import { Mail } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/common/button-link";
 import { CTA } from "@/components/common/cta";
@@ -9,6 +8,8 @@ import { StatCard } from "@/components/common/stat-card";
 import { ClientHighlightCard } from "@/components/client-highlight-card";
 import { ServiceCard } from "@/components/service-card";
 import { Hero } from "@/components/sections/hero";
+import { LimitlessModel } from "@/components/sections/limitless-model";
+import { SocialUpdateShowcase } from "@/components/sections/social-update-showcase";
 import { TeamCard } from "@/components/team-card";
 import { publishedClientHighlights } from "@/data/clients";
 import { services } from "@/data/services";
@@ -53,7 +54,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-surface-muted py-20">
+      <LimitlessModel />
+
+      <section className="py-20">
         <div className="container-page">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeader
@@ -75,12 +78,11 @@ export default function Home() {
 
       <section className="relative overflow-hidden py-20">
         <div className="pointer-events-none absolute -left-24 top-12 hidden size-80 opacity-[0.035] lg:block">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/brand/limitless-logo.svg"
             alt=""
-            fill
-            sizes="320px"
-            className="object-contain"
+            className="h-full w-full object-contain"
           />
         </div>
         <div className="container-page">
@@ -95,12 +97,14 @@ export default function Home() {
             </ButtonLink>
           </div>
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {publishedClientHighlights.map((client) => (
+            {publishedClientHighlights.slice(0, 6).map((client) => (
               <ClientHighlightCard key={client.name} client={client} />
             ))}
           </div>
         </div>
       </section>
+
+      <SocialUpdateShowcase />
 
       <section className="bg-surface py-20">
         <div className="container-page">

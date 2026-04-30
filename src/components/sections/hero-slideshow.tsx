@@ -18,6 +18,10 @@ export function HeroSlideshow({ images, fallbackImage }: HeroSlideshowProps) {
       return;
     }
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
     }, 6000);
@@ -38,6 +42,7 @@ export function HeroSlideshow({ images, fallbackImage }: HeroSlideshowProps) {
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
             index === activeIndex ? "opacity-100" : "opacity-0"
           }`}
+          style={{ objectPosition: image.objectPosition ?? "50% 50%" }}
         />
       ))}
     </>

@@ -67,7 +67,7 @@ export function ContactForm() {
           name="message"
           rows={6}
           className="mt-2 w-full resize-y rounded-md border border-border bg-white px-3 py-3 text-sm font-normal text-foreground"
-          placeholder="Tell us what you are looking for."
+          placeholder="Tell us about your founder question, Townhall idea, Workshop request, or recruiting note."
         />
       </label>
       <button

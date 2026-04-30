@@ -23,7 +23,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           {publicNav.map((item) => (
             <Link
               key={item.href}
@@ -39,7 +39,7 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <Link
             href={siteConfig.externalLinks.memberPortal}
             className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-brand bg-brand px-3 py-2 text-sm font-semibold text-white transition-colors hover:border-brand-deep hover:bg-brand-deep"
@@ -51,7 +51,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex size-10 items-center justify-center rounded-md border border-border bg-surface text-foreground lg:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-md border border-border bg-surface text-foreground xl:hidden"
           aria-label={isOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((value) => !value)}
@@ -61,7 +61,7 @@ export function Navbar() {
       </nav>
 
       {isOpen ? (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-border bg-background xl:hidden">
           <div className="container-page grid gap-2 py-4">
             {publicNav.map((item) => (
               <Link

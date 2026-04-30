@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/common/button-link";
 import { CTA } from "@/components/common/cta";
+import { iconMap } from "@/components/common/icon-map";
 import { SectionHeader } from "@/components/common/section-header";
 import { ServiceCard } from "@/components/service-card";
+import { eventFormats } from "@/data/limitlessModel";
 import { services } from "@/data/services";
 import { siteCopy } from "@/data/siteCopy";
 
@@ -43,6 +45,30 @@ export default function ServicesPage() {
             {services.map((service) => (
               <ServiceCard key={service.title} service={service} showLongDescription />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container-page">
+          <SectionHeader
+            eyebrow="Programming"
+            title={siteCopy.services.programmingTitle}
+            description={siteCopy.services.programmingDescription}
+          />
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {eventFormats.map((event) => {
+              const Icon = iconMap[event.icon];
+              return (
+                <article key={event.title} className="depth-card rounded-lg border border-border bg-surface p-6 shadow-subtle">
+                  <div className="flex size-11 items-center justify-center rounded-md bg-brand-soft text-brand">
+                    <Icon aria-hidden className="size-5" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold text-foreground">{event.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">{event.description}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

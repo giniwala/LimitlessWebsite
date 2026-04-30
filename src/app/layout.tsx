@@ -20,19 +20,21 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "Limitless Consulting is a student-led consulting organization at Michigan State University helping student startups solve business challenges while developing student consultants.",
+    "Limitless Consulting hosts Townhalls, Workshops, and student-led consulting support for Michigan State University founders.",
   keywords: [
     "Limitless Consulting",
     "Michigan State University",
     "student consulting",
     "student startups",
+    "MSU Townhall",
+    "MSU entrepreneurs",
     "MSU consulting",
   ],
   authors: [{ name: siteConfig.name }],
   openGraph: {
     title: `${siteConfig.name} | ${siteConfig.school}`,
     description:
-      "Student-led consulting for student startups and entrepreneurs at Michigan State University.",
+      "Townhalls, Workshops, and student-led consulting support for Michigan State University founders.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     images: [
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.school}`,
     description:
-      "Student-led consulting for student startups and entrepreneurs at Michigan State University.",
+      "Townhalls, Workshops, and student-led consulting support for Michigan State University founders.",
     images: ["/opengraph-image"],
   },
   icons: {

@@ -64,8 +64,9 @@ export type Service = {
 export type ClientHighlight = {
   name: string;
   category: string;
-  websiteUrl: string;
-  linkedInUrl: string;
+  websiteUrl?: string;
+  primaryLinkLabel?: string;
+  linkedInUrl?: string;
   logoSrc?: string;
   logoAlt?: string;
   shortDescription: string;
@@ -73,6 +74,43 @@ export type ClientHighlight = {
   sourceNotes?: string;
   publishStatus: "publish" | "review" | "draft";
   needsReview: boolean;
+};
+
+export type LimitlessModelStep = {
+  title: string;
+  description: string;
+  icon: IconKey;
+  tag: string;
+};
+
+export type LimitlessEventFormat = {
+  title: string;
+  description: string;
+  icon: IconKey;
+};
+
+export type TeamPhoto = {
+  src: string;
+  alt: string;
+  label?: string;
+  description?: string;
+  objectPosition?: string;
+};
+
+export type SocialUpdate = {
+  title: string;
+  eyebrow: string;
+  caption: string;
+  summary?: string;
+  platform: "LinkedIn";
+  linkedInUrl: string;
+  thumbnailSrc: string;
+  thumbnailAlt: string;
+  videoSrc?: string;
+  date?: string;
+  type: "LinkedIn post" | "LinkedIn video" | "Local video";
+  fallbackBehavior: "linkedin" | "local-video";
+  featured?: boolean;
 };
 
 export type FAQ = {

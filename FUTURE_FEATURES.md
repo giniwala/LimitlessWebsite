@@ -8,10 +8,10 @@ These ideas are ordered around value and maintainability. Avoid fragile scraping
 
 | Feature | User Value | Complexity | Maintenance | Recommended Path | Build Now? | Risks / Limits |
 |---|---|---|---|---|---|---|
-| Manually Curated “Latest from Limitless” | Makes the site feel active and gives visitors a reason to trust the org. | Low | Low | Create `src/data/socialUpdates.ts` with title, date, summary, platform, and URL. Display 3-4 cards on homepage. | Later, soon | Requires someone to update it monthly. Do not call it “live.” |
+| Manually Curated “Latest from Limitless” | Makes the site feel active and gives visitors a reason to trust the org. | Low | Low | Maintain `src/data/socialUpdates.ts` with title, summary, platform, and URL. Display featured cards on homepage and all cards on `/media`. | Built now | Requires someone to update it monthly. Do not call it “live.” |
 | Live Instagram Feed | Shows fresh event/recruiting content. | High | Medium | Use official Instagram Basic Display / Graph API if eligible. Otherwise embed approved posts manually. | Later | API permissions and platform changes can break it. Avoid scraping. |
 | Live LinkedIn Posts Feed | Useful for professional credibility and client updates. | High | Medium | Use LinkedIn API only if the org can get approved access. Safer alternative: curated post links in data. | Later | LinkedIn API access is limited; scraping is not recommended. |
-| “Latest from Limitless” Page | Central place for Town Hall recaps, recruiting news, and client-safe updates. | Low | Low | Start with local MDX or typed data. Upgrade to a CMS later. | Later | Needs editorial ownership. |
+| “Latest from Limitless” Page | Central place for Townhall recaps, recruiting news, and client-safe updates. | Low | Low | Use `/media` and `src/data/socialUpdates.ts`; upgrade to a CMS later if board editing needs grow. | Built now | Needs editorial ownership. |
 | Lightweight CMS | Lets nontechnical board members edit updates and pages. | Medium | Medium | Consider Sanity, Contentful, or Notion-backed publishing after launch. | Later | Adds accounts, permissions, and cost/complexity. |
 | Google Sheets Updates Feed | Easy for board members to maintain event/news updates. | Medium | Medium | Publish a read-only Google Sheet as JSON or use a small build-time script. | Later | Data validation and accidental public sharing need care. |
 | Founder Inquiry Intake Flow | Makes “Work With Us” more actionable. | Medium | Low | Add a form with venture stage, business question, timeline, confidentiality note, and contact info. Store in Formspree, Google Forms, or a server action with email. | Soon | Avoid collecting sensitive client info without a privacy note. |
@@ -23,9 +23,9 @@ These ideas are ordered around value and maintainability. Avoid fragile scraping
 | Member Resource Center v2 | Improves portal usefulness. | Medium | Medium | Add sections by semester/team and optional resource tags. Keep shared password until true per-user needs exist. | Later | Shared-password model is not suitable for highly sensitive materials. |
 | Animated Infinity Moments | Strengthens brand recall. | Low | Low | Use one or two subtle SVG/video accents near CTAs and section breaks. Respect reduced motion. | Only selectively | Overuse can make the site feel distracting. |
 
-## Best Next Small Feature
+## Feature Built In This Pass
 
-The best near-term feature is a manually curated “Latest from Limitless” section powered by `src/data/socialUpdates.ts`. It avoids platform API complexity, keeps board members in control, and can link to official Instagram/LinkedIn posts without pretending to be live.
+The manually curated "Latest from Limitless" / "Limitless in Motion" feature is now built with `src/data/socialUpdates.ts`, a homepage preview, and the `/media` page. It avoids platform API complexity, keeps board members in control, and links to official LinkedIn posts without pretending to be live.
 
 Suggested data shape:
 
@@ -38,5 +38,3 @@ export type SocialUpdate = {
   href: string;
 };
 ```
-
-Build it after the board has 3-5 real public posts they want to feature.

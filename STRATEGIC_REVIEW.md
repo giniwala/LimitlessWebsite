@@ -6,6 +6,8 @@ This review is intentionally critical. The site looks professional, but a strong
 
 ## Prospective Student Members
 
+Update after this pass: The site now explains that students can start by attending open Townhalls, then move into deeper consulting work through recruiting, Workshops, and project teams. This reduces the biggest "what do I actually do here?" gap for applicants.
+
 | Question | Assessment |
 |---|---|
 | What they want | What Limitless is, who joins, what work feels like, how competitive recruiting is, what skills they build, and when to apply. |
@@ -27,6 +29,8 @@ This review is intentionally critical. The site looks professional, but a strong
 | Trust signals | Members mainly need reliability, not marketing polish. Keep portal fast and boring. |
 
 ## Student Startup Clients
+
+Update after this pass: The homepage and Services page now make the founder journey clearer: pitch at Townhall, share 1-3 challenges, get live student brainstorming, and continue through Thursday Workshops when there is fit.
 
 | Question | Assessment |
 |---|---|
@@ -87,8 +91,8 @@ This review is intentionally critical. The site looks professional, but a strong
 |---|---|
 | High | Replace placeholders before launch: stats, application link, recruiting dates, and portal resource links. |
 | High | Build a founder inquiry form with project-fit questions and expectation setting. |
-| High | Add a short “Confidentiality and Scope” note for potential clients. |
-| Medium | Add real group/event photos and social proof from Town Halls. |
+| High | Add a short public-safe scope note for potential clients before collecting sensitive information. |
+| Medium | Keep refreshing real group/event photos and add approved founder/member quotes when available. |
 | Medium | Add an alumni/faculty partner pathway. |
 | Medium | Add a curated updates/news section so the site feels alive between recruiting cycles. |
 | Low | Add more brand motion only after content gaps are resolved. |

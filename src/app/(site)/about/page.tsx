@@ -3,7 +3,10 @@ import { Compass } from "lucide-react";
 import { CTA } from "@/components/common/cta";
 import { iconMap } from "@/components/common/icon-map";
 import { SectionHeader } from "@/components/common/section-header";
+import { LimitlessModel } from "@/components/sections/limitless-model";
+import { TeamPhotoCollage } from "@/components/sections/team-photo-collage";
 import { siteCopy } from "@/data/siteCopy";
+import { aboutTeamPhotos } from "@/data/teamPhotos";
 
 export const metadata: Metadata = {
   title: "About",
@@ -36,6 +39,14 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <TeamPhotoCollage
+        photos={aboutTeamPhotos}
+        title="The work feels different because the founders are in the room."
+        description="Limitless meetings are not just slide decks. They are founder pitches, live questions, student discussion, and practical next-step thinking."
+      />
+
+      <LimitlessModel compact />
 
       <section className="bg-surface-muted py-20">
         <div className="container-page">

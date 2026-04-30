@@ -5,21 +5,21 @@ export const stats: Stat[] = [
   {
     value: "30+",
     label: "Student Consultants",
-    description: "Quickly growing",
+    description: "Across majors",
   },
   {
     value: "3+",
     label: "Years Active",
-    description: "Startup atmosphere",
+    description: "Founder-facing work",
   },
   {
     value: "20+",
-    label: "Startup Engagements",
-    description: "Growing client roster",
+    label: "Startup Touchpoints",
+    description: "Townhalls and projects",
   },
   {
-    value: "10+",
-    label: "Industries Served",
-    description: "Built for all student ventures",
+    value: "4",
+    label: "Core Service Lanes",
+    description: "Focused support",
   },
 ];

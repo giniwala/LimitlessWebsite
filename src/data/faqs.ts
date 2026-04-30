@@ -7,7 +7,7 @@ export const faqs: FAQ[] = [
     category: "Recruiting",
     question: "Do I need previous consulting experience to apply?",
     answer:
-      "No. We look for curiosity, reliability, communication, and a willingness to learn. Prior consulting, startup, or case interview experience can help, but it is not required.",
+      "No. Townhalls are built for students from every background, and recruiting looks for curiosity, reliability, communication, and a willingness to learn.",
   },
   {
     id: "recruiting-majors",
@@ -21,28 +21,28 @@ export const faqs: FAQ[] = [
     category: "Recruiting",
     question: "When does recruitment happen?",
     answer:
-      "Typical recruiting timelines begin in early fall and early spring. Stay connected with our social media for live updates.",
+      "Typical recruiting timelines begin in early fall and early spring. Townhalls remain open outside recruiting, and official deadlines are posted on our social channels.",
   },
   {
     id: "member-time",
     category: "Member Experience",
     question: "What is the expected time commitment?",
     answer:
-      "Members should expect weekly meetings, project work, and occasional professional development events. A typical commitment may be 3-5 hours per week depending on project phase.",
+      "Members should expect Townhall or Workshop participation, project work, and occasional professional development events. A typical commitment may be 3-5 hours per week depending on project phase.",
   },
   {
     id: "member-development",
     category: "Member Experience",
     question: "What skills will I build?",
     answer:
-      "Members practice structured problem solving, research, client communication, slide writing, financial thinking, interviewing, and project management.",
+      "Members practice live problem framing, founder communication, research, go-to-market thinking, financial modeling, slide writing, and project management.",
   },
   {
     id: "client-fit",
     category: "Client Services",
     question: "Who can work with Limitless Consulting?",
     answer:
-      "The best fit is a student founder or early-stage campus venture with a clear business question and openness to working collaboratively with a student consulting team.",
+      "The best fit is a student founder or early-stage campus venture with a real business question and openness to a Townhall, Workshop, or student-led project format.",
   },
   {
     id: "client-cost",
