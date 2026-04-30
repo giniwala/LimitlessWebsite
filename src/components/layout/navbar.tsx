@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogIn, Menu, X } from "lucide-react";
+import { DoorOpen, Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/layout/brand-logo";
 import { publicNav, siteConfig } from "@/data/siteConfig";
 import { cn } from "@/utils/cn";
@@ -41,11 +41,11 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            href={siteConfig.externalLinks.memberPortalLogin}
+            href={siteConfig.externalLinks.memberPortal}
             className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-brand bg-brand px-3 py-2 text-sm font-semibold text-white transition-colors hover:border-brand-deep hover:bg-brand-deep"
           >
-            <span>Member Login</span>
-            <LogIn aria-hidden className="size-4" />
+            <span>Member Portal</span>
+            <DoorOpen aria-hidden className="size-4" />
           </Link>
         </div>
 
@@ -77,12 +77,12 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href={siteConfig.externalLinks.memberPortalLogin}
+              href={siteConfig.externalLinks.memberPortal}
               className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-brand bg-brand px-4 py-2 text-sm font-semibold text-white"
               onClick={() => setIsOpen(false)}
             >
-              <span>Member Login</span>
-              <LogIn aria-hidden className="size-4" />
+              <span>Member Portal</span>
+              <DoorOpen aria-hidden className="size-4" />
             </Link>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { ArrowRight, Mail } from "lucide-react";
+import { LogoMotionPanel } from "@/components/brand/logo-motion-panel";
 import { ButtonLink } from "@/components/common/button-link";
 import { siteConfig } from "@/data/siteConfig";
 
@@ -12,8 +13,8 @@ export function CTA({
   description = "Whether you are a student founder looking for support or a student ready to learn by doing, Limitless Consulting is built around real problems and useful work.",
 }: CTAProps) {
   return (
-    <section className="bg-brand-deep py-16 text-white">
-      <div className="container-page grid gap-8 md:grid-cols-[1.4fr_0.8fr] md:items-center">
+    <section className="relative overflow-hidden bg-brand-deep py-16 text-white">
+      <div className="container-page grid gap-8 lg:grid-cols-[1.1fr_0.45fr_0.55fr] lg:items-center">
         <div>
           <p className="text-sm font-semibold uppercase text-brand-soft">
             Get started
@@ -23,7 +24,8 @@ export function CTA({
             {description}
           </p>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
+        <LogoMotionPanel className="hidden lg:block" />
+        <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
           <ButtonLink href={siteConfig.externalLinks.applyNow} variant="light" icon={ArrowRight}>
             Apply Now
           </ButtonLink>

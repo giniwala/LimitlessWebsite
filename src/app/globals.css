@@ -69,6 +69,10 @@ select {
   animation: reveal-up 0.7s ease both;
 }
 
+.animate-infinity-float {
+  animation: infinity-float 12s ease-in-out infinite;
+}
+
 @keyframes reveal-up {
   from {
     opacity: 0;
@@ -78,5 +82,23 @@ select {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes infinity-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(-12px, 10px, 0) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal,
+  .animate-infinity-float {
+    animation: none;
   }
 }

@@ -3,26 +3,23 @@ import { siteConfig } from "@/data/siteConfig";
 
 // Portal data is member-facing. Do not put secret tokens or private keys here.
 // Use these placeholders for now, then point href values to permissioned Drive,
-// Supabase Storage, or database-backed resource records when the portal launches.
+// shared folders, or database-backed resource records when the portal expands.
 
 export const announcements: Announcement[] = [
   {
     title: "Weekly meeting moved to Wednesday",
     date: "2026-09-09",
-    audience: ["member", "project-manager", "admin"],
     body: "Placeholder announcement for all members. Replace with weekly updates from the executive board.",
   },
   {
     title: "Project manager scope reviews due Friday",
     date: "2026-09-11",
-    audience: ["project-manager", "admin"],
     body: "PMs should upload draft scope documents before the board review block.",
   },
   {
-    title: "Board planning notes available",
+    title: "Shared drive cleanup",
     date: "2026-09-13",
-    audience: ["admin"],
-    body: "Admin-only placeholder for executive board links, planning notes, and operating docs.",
+    body: "Replace this with an update about resource folders, meeting materials, or semester logistics.",
   },
 ];
 
@@ -32,32 +29,45 @@ export const portalEvents: PortalEvent[] = [
     date: "Every Tuesday",
     time: "7:00 PM - 8:00 PM",
     location: "Business College room TBD",
-    audience: ["member", "project-manager", "admin"],
   },
   {
     title: "Engagement Team Working Block",
     date: "Thursdays",
     time: "6:00 PM - 7:30 PM",
     location: "Team-selected workspace",
-    audience: ["member", "project-manager", "admin"],
   },
   {
     title: "Project Manager Standup",
     date: "Mondays",
     time: "5:30 PM - 6:00 PM",
     location: "Virtual",
-    audience: ["project-manager", "admin"],
   },
 ];
 
 export const portalResources: PortalResource[] = [
+  {
+    title: "Shared Google Drive",
+    description: "Main folder for member resources, project materials, and shared organization files.",
+    href: siteConfig.externalLinks.googleDriveFolder,
+    type: "Folder",
+    icon: "folder",
+    section: "Important Links",
+  },
+  {
+    title: "Meeting / Scheduling Link",
+    description: "Semester scheduling link for member meetings, interviews, or office hours.",
+    href: siteConfig.externalLinks.scheduling,
+    type: "Link",
+    icon: "calendar",
+    section: "Important Links",
+  },
   {
     title: "Member Handbook",
     description: "Organization expectations, meeting norms, and semester operating guide.",
     href: siteConfig.externalLinks.memberHandbook,
     type: "File",
     icon: "fileText",
-    roles: ["member", "project-manager", "admin"],
+    section: "Internal Docs",
   },
   {
     title: "Consulting Toolkit",
@@ -65,7 +75,7 @@ export const portalResources: PortalResource[] = [
     href: siteConfig.externalLinks.consultingToolkit,
     type: "Folder",
     icon: "folder",
-    roles: ["member", "project-manager", "admin"],
+    section: "Consulting Toolkit",
   },
   {
     title: "Case Interview Resources",
@@ -73,7 +83,7 @@ export const portalResources: PortalResource[] = [
     href: siteConfig.externalLinks.caseInterviewResources,
     type: "Folder",
     icon: "graduationCap",
-    roles: ["member", "project-manager", "admin"],
+    section: "Training Resources",
   },
   {
     title: "Slide Deck Templates",
@@ -81,7 +91,7 @@ export const portalResources: PortalResource[] = [
     href: siteConfig.externalLinks.slideDeckTemplates,
     type: "Template",
     icon: "fileText",
-    roles: ["member", "project-manager", "admin"],
+    section: "Templates",
   },
   {
     title: "Financial Model Templates",
@@ -89,7 +99,7 @@ export const portalResources: PortalResource[] = [
     href: siteConfig.externalLinks.financialModelTemplates,
     type: "Template",
     icon: "lineChart",
-    roles: ["member", "project-manager", "admin"],
+    section: "Templates",
   },
   {
     title: "Project Timeline",
@@ -97,7 +107,7 @@ export const portalResources: PortalResource[] = [
     href: siteConfig.externalLinks.projectTimeline,
     type: "Link",
     icon: "calendar",
-    roles: ["member", "project-manager", "admin"],
+    section: "Semester Timeline",
   },
   {
     title: "Client Deliverables Folder",
@@ -105,14 +115,14 @@ export const portalResources: PortalResource[] = [
     href: siteConfig.externalLinks.clientDeliverablesFolder,
     type: "Folder",
     icon: "database",
-    roles: ["project-manager", "admin"],
+    section: "Files / Resources",
   },
   {
-    title: "Executive Board Workspace",
-    description: "Private board-only planning resources and administrative notes.",
+    title: "Meeting Materials",
+    description: "Slides, notes, attendance resources, and recap files from weekly meetings.",
     href: siteConfig.externalLinks.executiveBoardWorkspace,
     type: "Folder",
     icon: "briefcase",
-    roles: ["admin"],
+    section: "Meeting Materials",
   },
 ];

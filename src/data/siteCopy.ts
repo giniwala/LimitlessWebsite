@@ -2,15 +2,15 @@
 // searching through page components.
 export const siteCopy = {
   mission:
-    "Limitless Consulting helps student startups solve business challenges while developing Michigan State students into thoughtful, practical consultants.",
+    "Limitless Consulting helps student entrepreneurs and early-stage ventures think through business decisions while developing Michigan State students into thoughtful, practical consultants.",
   home: {
     heroEyebrow: "Student-led consulting at Michigan State University",
     heroTitle: "Limitless Consulting",
     heroDescription:
-      "Helping student startups solve business challenges while developing practical, confident student consultants.",
-    whoWeAreTitle: "A student consulting group built around real startup problems.",
+      "Helping founders and campus ventures pressure-test strategy, growth, operations, and market questions while developing practical student consultants.",
+    whoWeAreTitle: "A student consulting group built around real founder questions.",
     whoWeAreDescription:
-      "Limitless Consulting helps founders clarify decisions, test assumptions, and move forward with practical recommendations while giving members real project experience.",
+      "Limitless Consulting connects student consultants with entrepreneurs, campus ventures, and growing companies through scoped advisory work, Town Halls, and practical problem-solving sessions.",
     audienceCards: [
       {
         title: "For student founders",
@@ -33,14 +33,14 @@ export const siteCopy = {
     ],
     servicesPreview: {
       eyebrow: "Services",
-      title: "Focused support for early-stage student ventures.",
-      description: "Engagements are scoped around questions founders can act on during a semester.",
+      title: "Focused support for early-stage ventures and student founders.",
+      description: "Work is scoped around concrete decisions founders can discuss, test, or act on during a semester.",
     },
     engagementsPreview: {
       eyebrow: "Engagements",
-      title: "Sample project stories, ready to replace with approved client work.",
+      title: "Public examples from Town Halls and client conversations.",
       description:
-        "These placeholders show the format without claiming results that have not been verified.",
+        "These examples use public sources and stay conservative about recommendations, deliverables, and outcomes.",
     },
     teamPreview: {
       eyebrow: "Team preview",
@@ -58,17 +58,17 @@ export const siteCopy = {
     eyebrow: "About",
     title: "Student consultants helping student founders move with more clarity.",
     description:
-      "Limitless Consulting exists to give Michigan State students meaningful consulting experience while supporting early-stage ventures across campus.",
+      "Limitless Consulting exists to give Michigan State students meaningful consulting experience while supporting student entrepreneurs, campus ventures, and early-stage companies connected to the MSU ecosystem.",
     cards: [
       {
         title: "Mission",
         description:
-          "Help student startups solve business challenges while developing student consultants through practical, client-facing work.",
+          "Help founders and early-stage ventures clarify business decisions while developing student consultants through practical, client-facing work.",
       },
       {
         title: "Vision",
         description:
-          "Become a trusted campus partner for student entrepreneurs and a training ground for thoughtful, analytical leaders.",
+          "Become a trusted campus partner for entrepreneurship, consulting, and business development across Michigan State.",
       },
       {
         title: "Founding Story",
@@ -82,7 +82,7 @@ export const siteCopy = {
       {
         title: "Useful work",
         description:
-          "We focus on recommendations that founders can understand, prioritize, and test quickly.",
+          "We focus on questions founders can understand, prioritize, and move forward on without overcomplicating the next step.",
         icon: "lightbulb",
       },
       {
@@ -168,9 +168,9 @@ export const siteCopy = {
   },
   services: {
     eyebrow: "Services",
-    title: "Consulting support for founders with specific business questions.",
+    title: "Consulting support for founders, campus ventures, and growing startups.",
     description:
-      "We help student startups clarify choices, gather evidence, and build practical next steps.",
+      "We help student entrepreneurs and early-stage teams clarify choices, gather evidence, and prepare practical next steps through scoped consulting work and discussion-based advisory sessions.",
     capabilitiesTitle: "A flexible menu for semester-length engagements",
     capabilitiesDescription:
       "Each engagement should be scoped tightly enough for a student team to produce a useful deliverable within the academic calendar.",
@@ -186,15 +186,15 @@ export const siteCopy = {
   },
   engagements: {
     eyebrow: "Engagements",
-    title: "Case study examples for the problems student startups bring.",
+    title: "Public engagement examples, written conservatively.",
     description:
-      "These are placeholder examples. Replace them with approved client stories once you have permission and verified outcomes.",
+      "These examples are based on public Limitless posts and public client context. They do not reveal private recommendations or claim unapproved results.",
     sectionTitle: "Engagement cards",
     sectionDescription:
-      "Keep this format consistent: client context, business problem, approach, deliverables, and impact.",
+      "Keep this format consistent: public client context, business question, discussion approach, possible outputs, and publication notes.",
     confidentialityTitle: "Publish only what clients approve.",
     confidentialityDescription:
-      "For launch, it is better to use anonymous examples than to overstate traction, name clients without permission, or publish confidential details.",
+      "Public Town Hall participation is safe to describe at a high level. Specific recommendations, files, metrics, or outcomes should only be added after client approval.",
   },
   contact: {
     eyebrow: "Contact",

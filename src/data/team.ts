@@ -3,6 +3,8 @@ import type { TeamMember } from "@/types/content";
 // Source: assets-to-import/LimitlessMasterDocSPRING26.xlsx, sheet "LimitlessStructure".
 // The workbook lists several people by first name only. Where a unique headshot
 // filename supplied the last name, the public roster uses that full display name.
+// Optional imagePosition values use CSS object-position, such as "50% 24%".
+// Add one only when the default card crop does not frame a headshot cleanly.
 // TODO: Add majors and short bios once the board approves public profile copy.
 export const teamMembers: TeamMember[] = [
   {

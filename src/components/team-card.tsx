@@ -15,17 +15,18 @@ export function TeamCard({ person }: { person: TeamMember }) {
   return (
     <article className="flex h-full flex-col rounded-lg border border-border bg-surface p-5 shadow-subtle transition-transform hover:-translate-y-1">
       {person.image ? (
-        <div className="relative h-52 w-full overflow-hidden rounded-md">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-surface-muted">
           <Image
             src={person.image}
             alt={`Portrait of ${person.name}`}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
             className="object-cover"
+            style={{ objectPosition: person.imagePosition ?? "50% 28%" }}
           />
         </div>
       ) : (
-        <div className="flex h-52 w-full items-center justify-center rounded-md bg-[linear-gradient(135deg,#d9f0e4,#dceef3)] text-4xl font-semibold text-brand">
+        <div className="flex aspect-[4/5] w-full items-center justify-center rounded-md bg-[linear-gradient(135deg,#d9f0e4,#dceef3)] text-4xl font-semibold text-brand">
           {initials(person.name)}
         </div>
       )}

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { siteConfig } from "@/data/siteConfig";
 import { cn } from "@/utils/cn";
@@ -12,6 +11,7 @@ type BrandLogoProps = {
 
 export function BrandLogo({ size = "md", className }: BrandLogoProps) {
   const [showImage, setShowImage] = useState(true);
+  const [useFallbackImage, setUseFallbackImage] = useState(false);
   const dimension = size === "sm" ? 40 : 48;
 
   if (!showImage) {
@@ -36,14 +36,22 @@ export function BrandLogo({ size = "md", className }: BrandLogoProps) {
         className,
       )}
     >
-      <Image
-        src={siteConfig.brand.logoPath}
+      {/* Static SVG/PNG brand assets render more predictably here than Next Image. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={useFallbackImage ? siteConfig.brand.logoFallbackPath : siteConfig.brand.logoPath}
         alt={`${siteConfig.name} logo`}
         width={dimension}
         height={dimension}
         className="h-full w-full object-contain"
-        onError={() => setShowImage(false)}
-        priority={size === "sm"}
+        onError={() => {
+          if (!useFallbackImage) {
+            setUseFallbackImage(true);
+            return;
+          }
+
+          setShowImage(false);
+        }}
       />
     </span>
   );

@@ -1,14 +1,16 @@
 import { ExternalLink } from "lucide-react";
 import { iconMap } from "@/components/common/icon-map";
 import type { PortalResource } from "@/types/content";
-import { roleLabels } from "@/utils/roles";
 
 export function ResourceCard({ resource }: { resource: PortalResource }) {
   const Icon = iconMap[resource.icon];
+  const isPlaceholder = resource.href === "#";
 
   return (
     <a
       href={resource.href}
+      target={isPlaceholder ? undefined : "_blank"}
+      rel={isPlaceholder ? undefined : "noreferrer"}
       className="group flex h-full flex-col rounded-lg border border-border bg-surface p-5 shadow-subtle transition-transform hover:-translate-y-1 hover:border-accent"
     >
       <div className="flex items-start justify-between gap-4">
@@ -27,7 +29,7 @@ export function ResourceCard({ resource }: { resource: PortalResource }) {
         <p className="mt-3 text-sm leading-6 text-muted">{resource.description}</p>
       </div>
       <p className="mt-5 text-xs text-muted">
-        Visible to {resource.roles.map((role) => roleLabels[role]).join(", ")}
+        {resource.section}
       </p>
     </a>
   );

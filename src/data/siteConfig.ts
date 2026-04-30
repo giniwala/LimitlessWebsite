@@ -10,28 +10,32 @@ export const siteConfig = {
   url: "https://limitlessconsulting.org",
   brand: {
     // Controls the navbar/footer logo. Replace the file in public/brand to update it.
-    logoPath: "/brand/limitless-logo.jpeg",
+    logoPath: "/brand/limitless-logo.svg",
+    logoFallbackPath: "/brand/limitless-logo.jpeg",
+    motionPath: "/brand/limitless-motion.mp4",
+    motionPosterPath: "/brand/limitless-white-on-green.png",
     fallbackInitials: "LC",
   },
   contact: {
     // Public contact email used on the contact page, footer, and mailto links.
-    email: "limitlessconsulting@msu.edu",
+    email: "RSO.Limitless@msu.edu",
   },
   externalLinks: {
     // TODO: Replace with the final new-member application form each recruiting cycle.
     applyNow: "https://forms.gle/limitless-application-placeholder",
     // TODO: Replace with a client inquiry form if you create one.
     clientInquiry: "#",
-    // Internal portal route. This stays local unless you change the login path.
-    memberPortalLogin: "/login",
-    // TODO: Replace with official social profiles.
-    instagram: "https://www.instagram.com/limitlessconsultingmsu",
-    linkedin: "https://www.linkedin.com/company/limitless-consulting-msu",
+    // Shared-password member portal route for current members.
+    memberPortal: "/portal",
+    // Official Limitless Club social profiles.
+    instagram: "https://www.instagram.com/limitlessclubmsu/",
+    linkedin:
+      "https://www.linkedin.com/company/limitless-club-at-michigan-state-university/posts/?feedView=all",
     // TODO: Replace with the public/shared Drive folder once approved.
     googleDriveFolder: "#",
     // TODO: Replace with a Calendly or booking link if the board uses one.
     scheduling: "#",
-    // Member portal resources. Keep private files permissioned in Google Drive/Supabase.
+    // Member portal resources. Keep private files permissioned in Google Drive or your storage tool.
     memberHandbook: "#",
     consultingToolkit: "#",
     caseInterviewResources: "#",

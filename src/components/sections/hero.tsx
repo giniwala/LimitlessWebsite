@@ -1,4 +1,4 @@
-import { ArrowRight, BriefcaseBusiness, LogIn } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, DoorOpen } from "lucide-react";
 import { ButtonLink } from "@/components/common/button-link";
 import { heroFallbackImage, heroImages } from "@/data/hero";
 import { siteConfig } from "@/data/siteConfig";
@@ -11,6 +11,13 @@ export function Hero() {
       <HeroSlideshow images={heroImages} fallbackImage={heroFallbackImage} />
       <div className="absolute inset-0 bg-brand-deep/75" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-deep/95 to-transparent" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={siteConfig.brand.logoPath}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute right-[-120px] top-20 hidden size-[520px] opacity-[0.08] mix-blend-screen motion-safe:animate-infinity-float lg:block"
+      />
 
       <div className="container-page relative z-10 py-24">
         <div className="max-w-3xl animate-reveal">
@@ -30,8 +37,8 @@ export function Hero() {
             <ButtonLink href="/contact" variant="secondary" icon={BriefcaseBusiness} className="border-white/30 bg-white/8 text-white hover:bg-white hover:text-brand-deep">
               Work With Us
             </ButtonLink>
-            <ButtonLink href={siteConfig.externalLinks.memberPortalLogin} variant="ghost" icon={LogIn} className="border-white/18 text-white hover:bg-white/12">
-              Member Login
+            <ButtonLink href={siteConfig.externalLinks.memberPortal} variant="ghost" icon={DoorOpen} className="border-white/18 text-white hover:bg-white/12">
+              Member Portal
             </ButtonLink>
           </div>
         </div>

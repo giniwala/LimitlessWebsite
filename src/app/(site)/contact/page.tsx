@@ -42,11 +42,11 @@ export default function ContactPage() {
               </a>
               <a href={siteConfig.externalLinks.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-lg border border-border bg-surface p-4 text-sm font-semibold text-foreground hover:border-accent">
                 <ExternalLink aria-hidden className="size-5 text-accent" />
-                LinkedIn placeholder
+                LinkedIn
               </a>
               <a href={siteConfig.externalLinks.instagram} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-lg border border-border bg-surface p-4 text-sm font-semibold text-foreground hover:border-accent">
                 <ExternalLink aria-hidden className="size-5 text-accent" />
-                Instagram placeholder
+                Instagram
               </a>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

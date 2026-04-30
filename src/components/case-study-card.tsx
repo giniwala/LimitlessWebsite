@@ -37,6 +37,11 @@ export function CaseStudyCard({ study }: { study: Engagement }) {
       <p className="mt-6 rounded-md border border-brand-soft bg-brand-soft/55 p-4 text-sm leading-6 text-brand-deep">
         {study.impact}
       </p>
+      {study.sourceLabel ? (
+        <p className="mt-4 text-xs font-semibold uppercase tracking-normal text-muted">
+          Source basis: {study.sourceLabel}
+        </p>
+      ) : null}
     </article>
   );
 }

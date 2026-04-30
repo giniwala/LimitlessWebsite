@@ -26,8 +26,6 @@ export type IconKey =
 
 export type IconMap = Record<IconKey, LucideIcon>;
 
-export type Role = "member" | "project-manager" | "admin";
-
 export type NavItem = {
   label: string;
   href: string;
@@ -46,6 +44,7 @@ export type TeamMember = {
   year?: string;
   bio?: string;
   image?: string;
+  imagePosition?: string;
   linkedin?: string;
   email?: string;
   category: "Executive Board" | "Project Manager" | "Consultant" | "Member";
@@ -71,6 +70,8 @@ export type Engagement = {
   impact: string;
   image?: string;
   isPublic: boolean;
+  confidence?: "high" | "medium" | "low";
+  sourceLabel?: string;
 };
 
 export type CaseStudy = Engagement;
@@ -86,7 +87,6 @@ export type Announcement = {
   title: string;
   body: string;
   date: string;
-  audience: Role[];
 };
 
 export type PortalEvent = {
@@ -94,7 +94,6 @@ export type PortalEvent = {
   date: string;
   time: string;
   location: string;
-  audience: Role[];
 };
 
 export type PortalResource = {
@@ -103,5 +102,13 @@ export type PortalResource = {
   href: string;
   type: "File" | "Folder" | "Template" | "Link";
   icon: IconKey;
-  roles: Role[];
+  section:
+    | "Important Links"
+    | "Files / Resources"
+    | "Meeting Materials"
+    | "Consulting Toolkit"
+    | "Templates"
+    | "Training Resources"
+    | "Internal Docs"
+    | "Semester Timeline";
 };
