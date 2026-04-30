@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7faf8;
+  --foreground: #10231d;
+  --surface: #ffffff;
+  --surface-muted: #edf5f0;
+  --border: #d9e7df;
+  --brand: #184d3a;
+  --brand-deep: #0d2f25;
+  --brand-soft: #d9f0e4;
+  --accent: #1f7a8c;
+  --accent-warm: #c8782b;
+  --muted: #5d7068;
+  --danger: #a83a32;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --color-accent-warm: var(--accent-warm);
+  --color-muted: var(--muted);
+  --color-danger: var(--danger);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+::selection {
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  outline-color: var(--accent);
+}
+
+.container-page {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.shadow-soft {
+  box-shadow: 0 18px 55px rgb(16 35 29 / 0.09);
+}
+
+.shadow-subtle {
+  box-shadow: 0 10px 30px rgb(16 35 29 / 0.07);
+}
+
+.animate-reveal {
+  animation: reveal-up 0.7s ease both;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
