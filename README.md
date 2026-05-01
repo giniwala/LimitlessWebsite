@@ -51,21 +51,30 @@ MEMBER_PORTAL_PASSWORD=replace-with-semester-password
 
 The public website works without `MEMBER_PORTAL_PASSWORD`. The portal will show a setup note until the password is configured.
 
-### Contact form email (optional but recommended)
+### Contact form email
 
-The contact UI posts to the server-only route **`/api/contact`**, implemented in `src/app/api/contact/route.ts`. Without email credentials configured, submissions return **`503 EMAIL_NOT_CONFIGURED`** and the form shows a helpful error instead of pretending an email went out.
+The contact UI posts to the server-only route **`/api/contact`**, implemented in `src/app/api/contact/route.ts`. The route sends email through Resend and keeps the API key out of browser code.
 
-**Recommended provider:** [Resend](https://resend.com) (HTTPS API, simple DNS verification for `CONTACT_FROM_EMAIL`).
+For launch, configure these variables locally and in Vercel. Without `RESEND_API_KEY` and `CONTACT_FROM_EMAIL`, the form shows a user-friendly fallback asking visitors to email `RSO.Limitless@msu.edu` directly.
 
 Variables:
 
 | Variable | Purpose |
 | --- | --- |
 | `RESEND_API_KEY` | Server-only secret from the Resend dashboard. Never prefix with `NEXT_PUBLIC_`. |
-| `CONTACT_FROM_EMAIL` | Verified sender (`onboarding@resend.dev` for quick tests in Resend onboarding, then your verified domain sender). |
+| `CONTACT_FROM_EMAIL` | Verified sender/domain in Resend, such as `no-reply@your-verified-domain.com`. |
 | `CONTACT_TO_EMAIL` | Inbox that receives inquiries (defaults to `siteConfig.contact.email`, currently `RSO.Limitless@msu.edu`). |
 
-**Configure on Vercel:** Project Settings → Environment Variables → add the three vars for Preview and Production → redeploy.
+Example `.env.local` values:
+
+```bash
+RESEND_API_KEY=your_resend_key_here
+CONTACT_TO_EMAIL=RSO.Limitless@msu.edu
+CONTACT_FROM_EMAIL=no-reply@your-verified-domain.com
+MEMBER_PORTAL_PASSWORD=test-password
+```
+
+**Configure on Vercel:** Project Settings → Environment Variables → add the vars for Preview and Production → redeploy.
 
 **Test locally:**
 
@@ -73,9 +82,11 @@ Variables:
 2. Restart `npm run dev`.
 3. Submit the form on `/contact` and confirm the message arrives in the destination inbox.
 
-Honeypot and basic validation happen in the route; there is **no secret in client code**.
+Honeypot, validation, and light rate limiting happen in the route; there is **no secret in client code**. The visitor's submitted email is set as `replyTo`, not as the sender.
 
 The form still exposes a **`mailto:`** link as a deliberate fallback for visitors who prefer their own mail client.
+
+See `CONTACT_SETUP.md` for full Resend and Vercel setup steps.
 
 ## Local Development
 

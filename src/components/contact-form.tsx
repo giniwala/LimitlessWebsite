@@ -10,18 +10,58 @@ type SubmitState =
   | { kind: "success" }
   | { kind: "error"; message: string };
 
+type ContactResponse = {
+  ok?: boolean;
+  error?: string;
+  code?: string;
+};
+
+const MAX_MESSAGE_LENGTH = 5000;
+
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 export function ContactForm() {
   const [submitState, setSubmitState] = useState<SubmitState>({ kind: "idle" });
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitState.kind === "loading") {
+      return;
+    }
+
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const name = String(formData.get("name") ?? "");
-    const email = String(formData.get("email") ?? "");
-    const inquiryType = String(formData.get("inquiryType") ?? "");
-    const message = String(formData.get("message") ?? "");
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const organization = String(formData.get("organization") ?? "").trim();
+    const inquiryType = String(formData.get("inquiryType") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
     const website = String(formData.get("website") ?? "");
+
+    if (!name) {
+      setSubmitState({ kind: "error", message: "Please enter your name." });
+      return;
+    }
+
+    if (!email || !isValidEmail(email)) {
+      setSubmitState({ kind: "error", message: "Please enter a valid email address." });
+      return;
+    }
+
+    if (!message) {
+      setSubmitState({ kind: "error", message: "Please enter a message." });
+      return;
+    }
+
+    if (message.length > MAX_MESSAGE_LENGTH) {
+      setSubmitState({
+        kind: "error",
+        message: `Please shorten your message to ${MAX_MESSAGE_LENGTH.toLocaleString()} characters or fewer.`,
+      });
+      return;
+    }
 
     setSubmitState({ kind: "loading" });
 
@@ -29,9 +69,17 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, inquiryType, message, website }),
+        body: JSON.stringify({
+          name,
+          email,
+          organization,
+          inquiryType,
+          message,
+          website,
+          sourcePath: window.location.pathname,
+        }),
       });
-      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string; code?: string };
+      const data = (await res.json().catch(() => ({}))) as ContactResponse;
 
       if (res.ok && data.ok) {
         form.reset();
@@ -42,15 +90,19 @@ export function ContactForm() {
       const msg =
         typeof data.error === "string"
           ? data.error
-          : "Something went wrong. Please try again or email us directly.";
+          : `Something went wrong. Please try again or email ${siteConfig.contact.email} directly.`;
 
-      const withMail =
-        data.code === "EMAIL_NOT_CONFIGURED" ? `${msg} ${siteConfig.contact.email}` : msg;
-      setSubmitState({ kind: "error", message: withMail });
+      setSubmitState({
+        kind: "error",
+        message:
+          data.code === "EMAIL_NOT_CONFIGURED"
+            ? `The contact form is temporarily unavailable. Please email ${siteConfig.contact.email} directly.`
+            : msg,
+      });
     } catch {
       setSubmitState({
         kind: "error",
-        message: "Could not reach the server. Check your connection or email us directly.",
+        message: `Could not reach the server. Please try again or email ${siteConfig.contact.email} directly.`,
       });
     }
   }
@@ -70,6 +122,7 @@ export function ContactForm() {
             name="name"
             autoComplete="name"
             disabled={submitState.kind === "loading"}
+            maxLength={120}
             className="mt-2 w-full rounded-md border border-border bg-white px-3 py-3 text-sm font-normal text-foreground disabled:opacity-60"
             placeholder="Your name"
           />
@@ -82,11 +135,24 @@ export function ContactForm() {
             type="email"
             autoComplete="email"
             disabled={submitState.kind === "loading"}
+            maxLength={320}
             className="mt-2 w-full rounded-md border border-border bg-white px-3 py-3 text-sm font-normal text-foreground disabled:opacity-60"
             placeholder="you@example.com"
           />
         </label>
       </div>
+
+      <label className="mt-5 block text-sm font-semibold text-foreground">
+        Organization / Company
+        <input
+          name="organization"
+          autoComplete="organization"
+          disabled={submitState.kind === "loading"}
+          maxLength={160}
+          className="mt-2 w-full rounded-md border border-border bg-white px-3 py-3 text-sm font-normal text-foreground disabled:opacity-60"
+          placeholder="Startup, student org, or company (optional)"
+        />
+      </label>
 
       <div className="absolute -left-[10000px] top-0 h-1 w-1 overflow-hidden" aria-hidden>
         <label>
@@ -116,6 +182,7 @@ export function ContactForm() {
           name="message"
           rows={6}
           disabled={submitState.kind === "loading"}
+          maxLength={MAX_MESSAGE_LENGTH}
           className="mt-2 w-full resize-y rounded-md border border-border bg-white px-3 py-3 text-sm font-normal text-foreground disabled:opacity-60"
           placeholder="Tell us about your founder question, Townhall idea, Workshop request, or recruiting note."
         />
@@ -139,23 +206,25 @@ export function ContactForm() {
       </button>
 
       <p id="contact-form-helper" className="mt-4 text-xs leading-relaxed text-muted">
-        Messages are submitted through this site first.{" "}
+        This sends directly to the Limitless inbox. You can also{" "}
         <a href={`mailto:${siteConfig.contact.email}`} className="font-semibold text-accent underline underline-offset-2 hover:text-brand">
-          Email {siteConfig.contact.email} directly
+          email {siteConfig.contact.email}
         </a>{" "}
-        if you prefer your own inbox.
+        from your own inbox.
       </p>
 
-      {submitState.kind === "success" ? (
-        <p className="mt-4 text-sm font-medium text-accent" role="status">
-          Thanks — your message was sent.
-        </p>
-      ) : null}
-      {submitState.kind === "error" ? (
-        <p className="mt-4 text-sm text-danger" role="alert">
-          {submitState.message}
-        </p>
-      ) : null}
+      <div aria-live="polite" aria-atomic="true">
+        {submitState.kind === "success" ? (
+          <p className="mt-4 text-sm font-medium text-accent" role="status">
+            Thanks — your message was sent to Limitless.
+          </p>
+        ) : null}
+        {submitState.kind === "error" ? (
+          <p className="mt-4 text-sm text-danger" role="alert">
+            {submitState.message}
+          </p>
+        ) : null}
+      </div>
     </form>
   );
 }
