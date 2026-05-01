@@ -1,15 +1,18 @@
-import { iconMap } from "@/components/common/icon-map";
 import { SectionHeader } from "@/components/common/section-header";
 import { PhotoCarousel } from "@/components/sections/photo-carousel";
+import { iconMap } from "@/components/common/icon-map";
 import { limitlessModelSteps } from "@/data/limitlessModel";
+import { siteCopy } from "@/data/siteCopy";
 import { homepageTeamPhotos } from "@/data/teamPhotos";
 
 type LimitlessModelProps = {
   compact?: boolean;
+  homepageMinimal?: boolean;
 };
 
-export function LimitlessModel({ compact = false }: LimitlessModelProps) {
-  const steps = compact ? limitlessModelSteps.slice(0, 4) : limitlessModelSteps;
+export function LimitlessModel({ compact = false, homepageMinimal = false }: LimitlessModelProps) {
+  const showStepCards = compact && !homepageMinimal;
+  const steps = showStepCards ? limitlessModelSteps.slice(0, 4) : [];
 
   return (
     <section className={compact ? "py-20" : "section-dark grain relative py-14 md:py-20"}>
@@ -19,33 +22,37 @@ export function LimitlessModel({ compact = false }: LimitlessModelProps) {
             <SectionHeader
               eyebrow="The Limitless model"
               title="From founder questions to structured student strategy."
-              description="Townhalls keep pitches public and concrete. Workshops and teams carry the hardest threads forward without losing momentum."
+              description={siteCopy.home.modelSummary}
               tone={compact ? "light" : "dark"}
               className="max-w-xl [&_p]:mt-3 [&_p]:text-base [&_p]:leading-7"
             />
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {steps.map((step, index) => {
-                const Icon = iconMap[step.icon];
-                return (
-                  <article
-                    key={step.title}
-                    className={compact ? "depth-card rounded-lg border border-border bg-surface p-5 shadow-subtle" : "depth-card glass-panel rounded-lg p-5"}
-                    style={{ transitionDelay: `${index * 35}ms` }}
-                  >
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex size-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
-                        <Icon aria-hidden className="size-5" />
+            {showStepCards ? (
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                {steps.map((step, index) => {
+                  const Icon = iconMap[step.icon];
+                  return (
+                    <article
+                      key={step.title}
+                      className="depth-card rounded-lg border border-border bg-surface p-5 shadow-subtle"
+                      style={{ transitionDelay: `${index * 35}ms` }}
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex size-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                          <Icon aria-hidden className="size-5" />
+                        </div>
+                        <span className="rounded-full border border-border bg-background px-2 py-1 text-xs font-semibold uppercase text-muted">
+                          {step.tag}
+                        </span>
                       </div>
-                      <span className={compact ? "rounded-full border border-border bg-background px-2 py-1 text-xs font-semibold uppercase text-muted" : "rounded-full border border-white/12 bg-white/8 px-2 py-1 text-xs font-semibold uppercase text-white/62"}>
-                        {step.tag}
-                      </span>
-                    </div>
-                    <h3 className={compact ? "mt-5 text-lg font-semibold text-foreground" : "mt-5 text-lg font-semibold text-white"}>{step.title}</h3>
-                    <p className={compact ? "mt-3 text-sm leading-6 text-muted" : "mt-3 text-sm leading-6 text-white/68"}>{step.description}</p>
-                  </article>
-                );
-              })}
-            </div>
+                      <h3 className="mt-5 text-lg font-semibold text-foreground">{step.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-muted">{step.description}</p>
+                    </article>
+                  );
+                })}
+              </div>
+            ) : (
+              <p className="mt-4 text-sm text-white/65">Townhall → Live problem-solving → Workshop follow-through.</p>
+            )}
           </div>
 
           <div className="relative overflow-hidden rounded-lg border border-white/12 bg-brand-deep p-5 shadow-soft">

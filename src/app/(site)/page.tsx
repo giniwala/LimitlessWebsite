@@ -1,16 +1,13 @@
 import { ButtonLink } from "@/components/common/button-link";
 import { BrandWatermark } from "@/components/common/brand-watermark";
 import { CTA } from "@/components/common/cta";
-import { iconMap } from "@/components/common/icon-map";
 import { SectionHeader } from "@/components/common/section-header";
 import { StatCard } from "@/components/common/stat-card";
 import { ClientHighlightCard } from "@/components/client-highlight-card";
-import { ServiceCard } from "@/components/service-card";
 import { Hero } from "@/components/sections/hero";
 import { LimitlessModel } from "@/components/sections/limitless-model";
 import { TeamCard } from "@/components/team-card";
 import { publishedClientHighlights } from "@/data/clients";
-import { services } from "@/data/services";
 import { siteCopy } from "@/data/siteCopy";
 import { stats } from "@/data/stats";
 import { boardMembers } from "@/data/team";
@@ -47,59 +44,20 @@ export default function Home() {
       </section>
 
       <section className="section-after-deep section-light py-14 md:py-18">
-        <div className="container-page grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <div className="container-page">
           <SectionHeader
             eyebrow="Who we are"
             title={siteCopy.home.whoWeAreTitle}
             description={siteCopy.home.whoWeAreDescription}
-            className="max-w-xl [&_p]:mt-4 [&_p]:text-[0.975rem] [&_p]:leading-7 [&_p]:md:text-[1rem]"
+            className="max-w-3xl [&_p]:mt-4 [&_p]:text-[0.98rem] [&_p]:leading-7 [&_p]:md:text-[1rem]"
           />
-          <div className="grid gap-4 md:grid-cols-3">
-            {siteCopy.home.audienceCards.map((card) => {
-              const Icon = iconMap[card.icon];
-              return (
-                <article
-                  key={card.title}
-                  className="depth-card glow-border rounded-lg border border-border bg-surface/90 p-5 shadow-subtle md:p-6"
-                >
-                  <div className="flex size-12 items-center justify-center rounded-lg bg-brand-soft text-brand">
-                    <Icon aria-hidden className="size-5" />
-                  </div>
-                  <h3 className="mt-4 font-semibold text-foreground md:mt-5">{card.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted md:mt-3">{card.description}</p>
-                </article>
-              );
-            })}
-          </div>
         </div>
       </section>
 
-      <LimitlessModel />
-
-      <section className="section-bridge-muted relative py-14 md:py-18">
-        <BrandWatermark blend className="hidden lg:block" />
-        <div className="container-page">
-          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-            <SectionHeader
-              eyebrow={siteCopy.home.servicesPreview.eyebrow}
-              title={siteCopy.home.servicesPreview.title}
-              description={siteCopy.home.servicesPreview.description}
-              className="max-w-xl [&_p]:mt-3 [&_p]:text-[0.975rem]"
-            />
-            <ButtonLink href="/services" variant="secondary">
-              View Services
-            </ButtonLink>
-          </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4 md:mt-10">
-            {services.slice(0, 4).map((service) => (
-              <ServiceCard key={service.title} service={service} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <LimitlessModel homepageMinimal />
 
       <section className="section-light py-14 md:py-18">
-        <div className="container-page relative overflow-hidden rounded-lg md:rounded-xl md:shadow-subtle">
+        <div className="container-page relative rounded-lg md:rounded-xl md:shadow-subtle">
           <BrandWatermark position="left" className="-top-24 hidden lg:block xl:-left-8" />
           <div className="relative z-[1]">
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">

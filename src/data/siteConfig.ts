@@ -21,8 +21,9 @@ export const siteConfig = {
     email: "RSO.Limitless@msu.edu",
   },
   externalLinks: {
-    // TODO: Replace with the final new-member application form each recruiting cycle.
-    applyNow: "https://forms.gle/limitless-application-placeholder",
+    // Temporary inactive application form while recruiting is closed.
+    applyNow:
+      "https://forms.office.com/pages/responsepage.aspx?id=MHEXIi9k2UGSEXQjetVofX4rdFRvR-xKjUo2pYQJvv5URU8yVk4wS1pNTkVGWUxFS01CNDNMVjJWMS4u&route=shorturl&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAPSb9JleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadury1CKgNMCbU32xtqg5SOZn56XaELTWjqyke7SXlUKHrJD-JyfW28nWMB6A_aem_yBq9ybN5j0hLhVcaA_f7mw",
     // TODO: Replace with a client inquiry form if you create one.
     clientInquiry: "#",
     // Shared-password member portal route for current members.

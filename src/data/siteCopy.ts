@@ -7,9 +7,9 @@ export const siteCopy = {
     heroTitle: "Limitless Consulting",
     heroDescription:
       "Open Townhalls, Thursday Workshops, and student-led consulting for MSU founders—bringing real pitches into rooms full of thoughtful student strategy.",
-    whoWeAreTitle: "Connecting MSU student founders with student consultants—and open crowds—through Townhalls and Workshops.",
+    whoWeAreTitle: "Built for MSU founders, students, and real startup problem-solving.",
     whoWeAreDescription:
-      "Limitless plugs founders into classmates from every major. Anyone can attend a Townhall; Workshops and consulting teams go deeper on market, GTM, model, and financial questions.",
+      "Limitless connects student founders with student consultants and open student audiences through Townhalls, Workshops, and focused startup support.",
     audienceCards: [
       {
         title: "For student founders",
@@ -31,7 +31,11 @@ export const siteCopy = {
       eyebrow: "Core services",
       title: "Where founder questions become next steps.",
       description: "Focused lanes: research, go-to-market, business model, and financial modeling—with MSU timelines in mind.",
+      summary:
+        "Limitless keeps the service menu tight so founders can move quickly: market research, go-to-market strategy, business model development, and financial modeling, all shaped around Townhall momentum and practical semester timelines.",
     },
+    modelSummary:
+      "Our model is simple: founders pitch real challenges at open Townhalls, students pressure-test the problem live, and Workshops carry the strongest ideas into structured support.",
     engagementsPreview: {
       eyebrow: "Founder showcase",
       title: "Organizations in Limitless orbit.",
