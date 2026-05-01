@@ -20,8 +20,8 @@ export default function JoinPage() {
 
   return (
     <>
-      <section className="bg-brand-deep py-20 text-white">
-        <div className="container-page">
+      <section className="page-hero page-hero-soft-bottom grain text-white">
+        <div className="container-page relative z-10">
           <p className="text-sm font-semibold uppercase text-brand-soft">{siteCopy.join.eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
             {siteCopy.join.title}
@@ -40,7 +40,7 @@ export default function JoinPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-light py-14 md:py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
             eyebrow="Who should apply"
@@ -65,7 +65,7 @@ export default function JoinPage() {
         description="Townhall gives any student a low-pressure way to listen and contribute. Membership adds Workshop support, project responsibility, and more reps with founders."
       />
 
-      <section className="bg-surface-muted py-20">
+      <section className="section-soft py-14 md:py-20">
         <div className="container-page">
           <SectionHeader
             eyebrow="Timeline"
@@ -84,7 +84,7 @@ export default function JoinPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-light py-14 md:py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeader
             eyebrow="Application process"
@@ -107,7 +107,7 @@ export default function JoinPage() {
         </div>
       </section>
 
-      <section className="bg-surface py-20">
+      <section className="section-light py-14 md:py-20">
         <div className="container-page">
           <SectionHeader
             eyebrow="Applicant questions"

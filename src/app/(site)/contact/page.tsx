@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Mail } from "lucide-react";
+import { BrandWatermark } from "@/components/common/brand-watermark";
 import { ButtonLink } from "@/components/common/button-link";
 import { SectionHeader } from "@/components/common/section-header";
 import { SocialLinks } from "@/components/common/social-links";
@@ -16,8 +17,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-brand-deep py-20 text-white">
-        <div className="container-page">
+      <section className="page-hero page-hero-soft-bottom grain relative text-white">
+        <BrandWatermark surface="dark" position="right" className="-top-6 right-[-6%]" />
+        <div className="container-page relative z-10">
           <p className="text-sm font-semibold uppercase text-brand-soft">{siteCopy.contact.eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
             {siteCopy.contact.title}
@@ -28,7 +30,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-light relative overflow-hidden py-14 md:py-18">
+        <BrandWatermark blend className="top-[-10%]" />
         <div className="container-page grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
             <SectionHeader

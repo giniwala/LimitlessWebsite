@@ -26,7 +26,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
           <h2 id={`${category}-heading`} className="mb-3 text-xl font-semibold text-foreground">
             {category}
           </h2>
-          <div className="divide-y divide-border rounded-lg border border-border bg-surface">
+          <div className="divide-y divide-border rounded-lg border border-border bg-surface shadow-subtle">
             {faqs.map((faq) => {
               const isOpen = faq.id === openId;
 

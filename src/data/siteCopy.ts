@@ -6,41 +6,36 @@ export const siteCopy = {
     heroEyebrow: "MSU founders. Real challenges. Student strategy.",
     heroTitle: "Limitless Consulting",
     heroDescription:
-      "Founders pitch at open Townhalls, students brainstorm the business problems in the room, and Thursday Workshops turn promising ideas into deeper support.",
-    whoWeAreTitle: "A consulting organization built around the moment a founder asks, \"What should we do next?\"",
+      "Open Townhalls, Thursday Workshops, and student-led consulting for MSU founders—bringing real pitches into rooms full of thoughtful student strategy.",
+    whoWeAreTitle: "Connecting MSU student founders with student consultants—and open crowds—through Townhalls and Workshops.",
     whoWeAreDescription:
-      "Limitless connects MSU student entrepreneurs with students from every major. Townhalls are open to anyone; consulting projects and Workshops give members a deeper way to practice startup strategy.",
+      "Limitless plugs founders into classmates from every major. Anyone can attend a Townhall; Workshops and consulting teams go deeper on market, GTM, model, and financial questions.",
     audienceCards: [
       {
         title: "For student founders",
-        description:
-          "Bring a real business, pitch the room, and leave with sharper questions, fresh perspectives, and a path toward Workshop support.",
+        description: "Bring a venture, pitch the room, walk out with sharper questions—and a clearer path toward Workshop support.",
         icon: "briefcase",
       },
       {
         title: "For curious students",
-        description:
-          "Sit in on Townhall, hear from student founders, and practice solving messy startup questions before you ever join a project team.",
+        description: "Show up at Townhall, hear real founder problems, and practice breaking down messy startup decisions.",
         icon: "graduationCap",
       },
       {
         title: "For campus partners",
-        description:
-          "Collaborate on founder-facing events, pitch practice, and entrepreneurship programming across the MSU ecosystem.",
+        description: "Co-build founder-facing programming, pitch labs, and MSU entrepreneurship touchpoints.",
         icon: "handshake",
       },
     ],
     servicesPreview: {
       eyebrow: "Core services",
-      title: "Four ways we help founders turn questions into next steps.",
-      description:
-        "Our work stays focused: market research, go-to-market strategy, business model development, and financial modeling.",
+      title: "Where founder questions become next steps.",
+      description: "Focused lanes: research, go-to-market, business model, and financial modeling—with MSU timelines in mind.",
     },
     engagementsPreview: {
       eyebrow: "Founder showcase",
-      title: "Select organizations connected to Limitless programming and consulting work.",
-      description:
-        "We highlight public company context and founder milestones, not private project scopes or confidential recommendations.",
+      title: "Organizations in Limitless orbit.",
+      description: "Public context only—we never publish private scopes, decks, or recommendations.",
     },
     mediaPreview: {
       eyebrow: "Limitless in motion",
@@ -50,14 +45,18 @@ export const siteCopy = {
     },
     teamPreview: {
       eyebrow: "Leadership",
-      title: "Meet the board and project leads behind the room.",
-      description:
-        "The public team page focuses on executive board members and project managers guiding Townhalls, Workshops, recruiting, and client support.",
+      title: "The board guiding Townhalls and Workshops.",
+      description: "Executive board and leads running recruiting, ops, founder support, and the room.",
     },
     contactCta: {
       title: "Have a founder challenge for the room?",
       description:
         "Tell us what you are building, what decision feels stuck, and whether a Townhall or Workshop could help.",
+    },
+    ctaBanner: {
+      title: "Ready to plug into the room?",
+      description:
+        "Founders: bring what you are building. Students: practice strategy where it counts. Start with Townhall or reach out—we will steer you.",
     },
   },
   about: {
@@ -218,6 +217,6 @@ export const siteCopy = {
       "Contact us about Townhalls, Workshops, consulting, partnerships, recruiting, alumni help, or general questions.",
     formTitle: "Tell us what you are building or asking.",
     formDescription:
-      "Share a few details and your email app will open with a prepared note to the Limitless team.",
+      "Send a message securely from your browser—we receive it directly. Prefer your own inbox? Use the Mail link beside the form.",
   },
 } as const;

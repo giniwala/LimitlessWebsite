@@ -12,8 +12,8 @@ export function ServiceCard({
   const Icon = iconMap[service.icon];
 
   return (
-    <article className="h-full rounded-lg border border-border bg-surface p-6 shadow-subtle transition-transform hover:-translate-y-1">
-      <div className="flex size-12 items-center justify-center rounded-md bg-brand-soft text-brand">
+    <article className="depth-card glow-border h-full rounded-lg border border-border bg-surface/90 p-6 shadow-subtle">
+      <div className="flex size-12 items-center justify-center rounded-lg bg-brand-soft text-brand">
         <Icon aria-hidden className="size-6" />
       </div>
       <h3 className="mt-5 text-xl font-semibold text-foreground">{service.title}</h3>

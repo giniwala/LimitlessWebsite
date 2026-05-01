@@ -12,7 +12,7 @@ export function SocialUpdateShowcase({ fullPage = false }: SocialUpdateShowcaseP
   const updates = fullPage ? socialUpdates : featuredSocialUpdates;
 
   return (
-    <section className={fullPage ? "py-20" : "bg-surface-muted py-20"}>
+    <section className={fullPage ? "py-16 md:py-20" : "section-soft py-14 md:py-18"}>
       <div className="container-page">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <SectionHeader

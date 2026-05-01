@@ -9,11 +9,11 @@ type SocialLinksProps = {
 };
 
 const baseLink =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-semibold transition-colors";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-300";
 
 const variantClasses = {
   default:
-    "border-border bg-surface text-foreground hover:border-accent hover:text-accent",
+    "border-border bg-surface/84 text-foreground shadow-subtle hover:border-accent hover:text-accent",
   light:
     "border-white/25 bg-white/8 text-white hover:border-white hover:bg-white hover:text-brand-deep",
   compact:

@@ -13,13 +13,13 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/92 backdrop-blur">
-      <nav className="container-page flex h-16 items-center justify-between gap-4" aria-label="Main navigation">
+    <header className="sticky top-0 z-[60] bg-transparent px-3 py-3">
+      <nav className="container-page flex min-h-16 items-center justify-between gap-4 rounded-full border border-white/12 bg-brand-deep/92 px-4 text-white shadow-soft backdrop-blur-xl" aria-label="Main navigation">
         <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
           <BrandLogo size="sm" />
           <span className="flex flex-col leading-none">
-            <span className="text-sm font-semibold text-foreground">{siteConfig.name}</span>
-            <span className="mt-1 text-xs text-muted">{siteConfig.school}</span>
+            <span className="text-sm font-semibold text-white">{siteConfig.name}</span>
+            <span className="mt-1 text-xs text-white/58">{siteConfig.school}</span>
           </span>
         </Link>
 
@@ -29,8 +29,8 @@ export function Navbar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-muted hover:text-foreground",
-                pathname === item.href && "bg-surface-muted text-foreground",
+                "rounded-full px-3 py-2 text-sm font-medium text-white/62 transition-colors hover:bg-white/10 hover:text-white",
+                pathname === item.href && "bg-white/12 text-white",
               )}
               aria-current={pathname === item.href ? "page" : undefined}
             >
@@ -42,7 +42,7 @@ export function Navbar() {
         <div className="hidden items-center gap-3 xl:flex">
           <Link
             href={siteConfig.externalLinks.memberPortal}
-            className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-brand bg-brand px-3 py-2 text-sm font-semibold text-white transition-colors hover:border-brand-deep hover:bg-brand-deep"
+            className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-sm font-semibold text-brand-deep transition-colors hover:border-brand-soft hover:bg-brand-soft"
           >
             <span>Member Portal</span>
             <DoorOpen aria-hidden className="size-4" />
@@ -51,7 +51,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex size-10 items-center justify-center rounded-md border border-border bg-surface text-foreground xl:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-full border border-white/18 bg-white/8 text-white xl:hidden"
           aria-label={isOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((value) => !value)}
@@ -61,15 +61,15 @@ export function Navbar() {
       </nav>
 
       {isOpen ? (
-        <div className="border-t border-border bg-background xl:hidden">
-          <div className="container-page grid gap-2 py-4">
+        <div className="container-page mt-3 rounded-lg border border-white/12 bg-brand-deep/96 p-3 text-white shadow-soft backdrop-blur-xl xl:hidden">
+          <div className="grid gap-2 py-4">
             {publicNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-md px-3 py-3 text-sm font-semibold text-muted hover:bg-surface-muted hover:text-foreground",
-                  pathname === item.href && "bg-surface-muted text-foreground",
+                  "rounded-full px-4 py-3 text-sm font-semibold text-white/68 hover:bg-white/10 hover:text-white",
+                  pathname === item.href && "bg-white/12 text-white",
                 )}
                 onClick={() => setIsOpen(false)}
               >
@@ -78,7 +78,7 @@ export function Navbar() {
             ))}
             <Link
               href={siteConfig.externalLinks.memberPortal}
-              className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-brand bg-brand px-4 py-2 text-sm font-semibold text-white"
+              className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-white bg-white px-4 py-2 text-sm font-semibold text-brand-deep"
               onClick={() => setIsOpen(false)}
             >
               <span>Member Portal</span>

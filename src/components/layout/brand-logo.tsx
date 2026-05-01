@@ -31,7 +31,7 @@ export function BrandLogo({ size = "md", className }: BrandLogoProps) {
   return (
     <span
       className={cn(
-        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-md bg-white ring-1 ring-border",
+        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-md bg-transparent ring-1 ring-white/14 shadow-[inset_0_1px_0_rgb(255_255_255_/_0.08)] backdrop-blur-[1px]",
         size === "sm" ? "size-10" : "size-12",
         className,
       )}
@@ -43,7 +43,7 @@ export function BrandLogo({ size = "md", className }: BrandLogoProps) {
         alt={`${siteConfig.name} logo`}
         width={dimension}
         height={dimension}
-        className="h-full w-full object-contain"
+        className="h-full w-full object-contain p-0.5"
         onError={() => {
           if (!useFallbackImage) {
             setUseFallbackImage(true);

@@ -51,6 +51,32 @@ MEMBER_PORTAL_PASSWORD=replace-with-semester-password
 
 The public website works without `MEMBER_PORTAL_PASSWORD`. The portal will show a setup note until the password is configured.
 
+### Contact form email (optional but recommended)
+
+The contact UI posts to the server-only route **`/api/contact`**, implemented in `src/app/api/contact/route.ts`. Without email credentials configured, submissions return **`503 EMAIL_NOT_CONFIGURED`** and the form shows a helpful error instead of pretending an email went out.
+
+**Recommended provider:** [Resend](https://resend.com) (HTTPS API, simple DNS verification for `CONTACT_FROM_EMAIL`).
+
+Variables:
+
+| Variable | Purpose |
+| --- | --- |
+| `RESEND_API_KEY` | Server-only secret from the Resend dashboard. Never prefix with `NEXT_PUBLIC_`. |
+| `CONTACT_FROM_EMAIL` | Verified sender (`onboarding@resend.dev` for quick tests in Resend onboarding, then your verified domain sender). |
+| `CONTACT_TO_EMAIL` | Inbox that receives inquiries (defaults to `siteConfig.contact.email`, currently `RSO.Limitless@msu.edu`). |
+
+**Configure on Vercel:** Project Settings → Environment Variables → add the three vars for Preview and Production → redeploy.
+
+**Test locally:**
+
+1. Add `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, and optionally `CONTACT_TO_EMAIL` in `.env.local`.
+2. Restart `npm run dev`.
+3. Submit the form on `/contact` and confirm the message arrives in the destination inbox.
+
+Honeypot and basic validation happen in the route; there is **no secret in client code**.
+
+The form still exposes a **`mailto:`** link as a deliberate fallback for visitors who prefer their own mail client.
+
 ## Local Development
 
 Install dependencies:
@@ -302,14 +328,14 @@ Edit this file when the organization changes how Townhalls, Workshops, collabora
 
 ### Media / Content Page
 
-The `/media` page and homepage "Limitless in Motion" section are powered by `src/data/socialUpdates.ts`.
+The `/media` page uses the `SocialUpdateShowcase` carousel powered by `src/data/socialUpdates.ts`. The homepage may surface media elsewhere over time (for example linking to `/media`) while keeping pacing tight.
 
 This is a manually curated thumbnail carousel, not a live LinkedIn or Instagram feed. To update it:
 
 1. Add the official LinkedIn post URL in `linkedInUrl`.
 2. Write a short `title`, `eyebrow`, and `caption`.
 3. Add a thumbnail image to `public/images/media` and reference it with `thumbnailSrc`.
-4. Set `featured: true` only for posts that should appear on the homepage.
+4. Keep `featured: true` only for clips you want prioritized in carousel selections (see carousel usage).
 5. Do not download or autoplay LinkedIn videos unless the board owns the original video asset and has permission to host it.
 
 If you later add direct video files, place approved files in `public/videos/media`, set `videoSrc` in `src/data/socialUpdates.ts`, keep playback muted and `playsInline`, and provide a static thumbnail for reduced-motion users. Without a local `videoSrc`, the carousel uses thumbnails and links visitors to the official LinkedIn post.

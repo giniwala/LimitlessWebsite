@@ -13,11 +13,11 @@ type ButtonLinkProps = {
 
 const variants = {
   primary:
-    "border-brand bg-brand text-white hover:bg-brand-deep hover:border-brand-deep",
+    "border-brand bg-brand text-white shadow-[0_14px_34px_rgb(24_77_58_/_0.18)] hover:border-brand-deep hover:bg-brand-deep hover:shadow-[0_18px_44px_rgb(15_143_106_/_0.18)]",
   secondary:
-    "border-border bg-surface text-foreground hover:border-brand hover:text-brand",
-  light: "border-white bg-white text-brand-deep hover:bg-brand-soft hover:border-brand-soft",
-  ghost: "border-transparent bg-transparent text-brand hover:bg-brand-soft",
+    "border-border bg-surface/86 text-foreground shadow-subtle hover:border-accent hover:text-accent",
+  light: "border-white bg-white text-brand-deep shadow-[0_18px_44px_rgb(255_255_255_/_0.12)] hover:border-brand-soft hover:bg-brand-soft",
+  ghost: "border-white/18 bg-white/6 text-white hover:border-white/38 hover:bg-white/12",
 };
 
 export function ButtonLink({
@@ -28,7 +28,7 @@ export function ButtonLink({
   className,
 }: ButtonLinkProps) {
   const classes = cn(
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-semibold transition-colors",
+    "group inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-300",
     variants[variant],
     className,
   );
@@ -37,7 +37,7 @@ export function ButtonLink({
     return (
       <a className={classes} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined}>
         <span>{children}</span>
-        <Icon aria-hidden className="size-4" />
+        <Icon aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
       </a>
     );
   }
@@ -45,7 +45,7 @@ export function ButtonLink({
   return (
     <Link className={classes} href={href}>
       <span>{children}</span>
-      <Icon aria-hidden className="size-4" />
+      <Icon aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
     </Link>
   );
 }

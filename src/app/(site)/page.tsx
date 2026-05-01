@@ -1,6 +1,5 @@
-import { Mail } from "lucide-react";
-import Link from "next/link";
 import { ButtonLink } from "@/components/common/button-link";
+import { BrandWatermark } from "@/components/common/brand-watermark";
 import { CTA } from "@/components/common/cta";
 import { iconMap } from "@/components/common/icon-map";
 import { SectionHeader } from "@/components/common/section-header";
@@ -9,7 +8,6 @@ import { ClientHighlightCard } from "@/components/client-highlight-card";
 import { ServiceCard } from "@/components/service-card";
 import { Hero } from "@/components/sections/hero";
 import { LimitlessModel } from "@/components/sections/limitless-model";
-import { SocialUpdateShowcase } from "@/components/sections/social-update-showcase";
 import { TeamCard } from "@/components/team-card";
 import { publishedClientHighlights } from "@/data/clients";
 import { services } from "@/data/services";
@@ -22,7 +20,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="bg-brand-deep pb-10 text-white">
+      <section className="section-stats-deep relative overflow-hidden pb-12 pt-10 text-white md:pb-14 md:pt-12">
         <div className="container-page grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
             <StatCard key={stat.label} stat={stat} />
@@ -30,23 +28,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="marquee-soft-bottom-glow section-band-marquee-soft relative overflow-hidden border-y border-white/12 py-7 text-white md:py-8">
+        <div className="marquee-track flex whitespace-nowrap">
+          {[...publishedClientHighlights, ...publishedClientHighlights].map((client, index) => (
+            <div
+              key={`${client.name}-${index}`}
+              className="flex items-center gap-8 px-6 text-lg font-semibold text-white/72 md:text-2xl"
+              aria-hidden={index >= publishedClientHighlights.length}
+            >
+              <span
+                aria-hidden
+                className="h-2 w-2 rounded-full bg-[var(--neon)] shadow-[0_0_18px_rgb(54_240_160_/_0.6)]"
+              />
+              <span>{client.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-after-deep section-light py-14 md:py-18">
+        <div className="container-page grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <SectionHeader
             eyebrow="Who we are"
             title={siteCopy.home.whoWeAreTitle}
             description={siteCopy.home.whoWeAreDescription}
+            className="max-w-xl [&_p]:mt-4 [&_p]:text-[0.975rem] [&_p]:leading-7 [&_p]:md:text-[1rem]"
           />
           <div className="grid gap-4 md:grid-cols-3">
             {siteCopy.home.audienceCards.map((card) => {
               const Icon = iconMap[card.icon];
               return (
-                <article key={card.title} className="rounded-lg border border-border bg-surface p-5 shadow-subtle">
-                  <div className="flex size-11 items-center justify-center rounded-md bg-brand-soft text-brand">
+                <article
+                  key={card.title}
+                  className="depth-card glow-border rounded-lg border border-border bg-surface/90 p-5 shadow-subtle md:p-6"
+                >
+                  <div className="flex size-12 items-center justify-center rounded-lg bg-brand-soft text-brand">
                     <Icon aria-hidden className="size-5" />
                   </div>
-                  <h3 className="mt-5 font-semibold text-foreground">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted">{card.description}</p>
+                  <h3 className="mt-4 font-semibold text-foreground md:mt-5">{card.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted md:mt-3">{card.description}</p>
                 </article>
               );
             })}
@@ -56,19 +76,21 @@ export default function Home() {
 
       <LimitlessModel />
 
-      <section className="py-20">
+      <section className="section-bridge-muted relative py-14 md:py-18">
+        <BrandWatermark blend className="hidden lg:block" />
         <div className="container-page">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeader
               eyebrow={siteCopy.home.servicesPreview.eyebrow}
               title={siteCopy.home.servicesPreview.title}
               description={siteCopy.home.servicesPreview.description}
+              className="max-w-xl [&_p]:mt-3 [&_p]:text-[0.975rem]"
             />
             <ButtonLink href="/services" variant="secondary">
               View Services
             </ButtonLink>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4 md:mt-10">
             {services.slice(0, 4).map((service) => (
               <ServiceCard key={service.title} service={service} />
             ))}
@@ -76,77 +98,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-20">
-        <div className="pointer-events-none absolute -left-24 top-12 hidden size-80 opacity-[0.035] lg:block">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/limitless-logo.svg"
-            alt=""
-            className="h-full w-full object-contain"
-          />
-        </div>
-        <div className="container-page">
-          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-            <SectionHeader
-              eyebrow={siteCopy.home.engagementsPreview.eyebrow}
-              title={siteCopy.home.engagementsPreview.title}
-              description={siteCopy.home.engagementsPreview.description}
-            />
-            <ButtonLink href="/engagements" variant="secondary">
-              View Engagements
-            </ButtonLink>
-          </div>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {publishedClientHighlights.slice(0, 6).map((client) => (
-              <ClientHighlightCard key={client.name} client={client} />
-            ))}
+      <section className="section-light py-14 md:py-18">
+        <div className="container-page relative overflow-hidden rounded-lg md:rounded-xl md:shadow-subtle">
+          <BrandWatermark position="left" className="-top-24 hidden lg:block xl:-left-8" />
+          <div className="relative z-[1]">
+            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <SectionHeader
+                eyebrow={siteCopy.home.engagementsPreview.eyebrow}
+                title={siteCopy.home.engagementsPreview.title}
+                description={siteCopy.home.engagementsPreview.description}
+                className="max-w-2xl [&_p]:mt-3 [&_p]:text-[0.975rem]"
+              />
+              <ButtonLink href="/engagements" variant="secondary">
+                View Engagements
+              </ButtonLink>
+            </div>
+            <div className="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 xl:grid-cols-4">
+              {publishedClientHighlights.slice(0, 4).map((client) => (
+                <ClientHighlightCard key={client.name} client={client} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <SocialUpdateShowcase />
-
-      <section className="bg-surface py-20">
+      <section className="section-soft py-14 md:py-18">
         <div className="container-page">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <SectionHeader
               eyebrow={siteCopy.home.teamPreview.eyebrow}
               title={siteCopy.home.teamPreview.title}
               description={siteCopy.home.teamPreview.description}
+              className="max-w-2xl [&_p]:mt-3 [&_p]:text-[0.975rem]"
             />
             <ButtonLink href="/team" variant="secondary">
               Meet the Team
             </ButtonLink>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {boardMembers.slice(0, 3).map((person) => (
+          <div className="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 xl:grid-cols-4">
+            {boardMembers.slice(0, 4).map((person) => (
               <TeamCard key={person.name} person={person} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-background py-16">
-        <div className="container-page rounded-lg border border-border bg-surface p-6 shadow-subtle md:p-8">
-          <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-            <div>
-              <h2 className="text-2xl font-semibold text-foreground">{siteCopy.home.contactCta.title}</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
-                {siteCopy.home.contactCta.description}
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-brand bg-brand px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-brand-deep hover:bg-brand-deep"
-            >
-              <span>Contact Us</span>
-              <Mail aria-hidden className="size-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <CTA />
+      <CTA title={siteCopy.home.ctaBanner.title} description={siteCopy.home.ctaBanner.description} />
     </>
   );
 }

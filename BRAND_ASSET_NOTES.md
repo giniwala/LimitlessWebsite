@@ -39,7 +39,8 @@ Approved website brand files live in `public/brand`.
 - The homepage hero uses a low-opacity logo watermark behind the content.
 - The homepage hero now uses approved Limitless team/event photos rather than a generic stock fallback.
 - The Limitless Model section uses a single-photo carousel and subtle depth cards to explain the Townhall-to-Workshop flow.
-- The homepage client showcase uses a subtle oversized logo motif.
+- Supplementary low-opacity motifs use **`BrandWatermark`** (`src/components/common/brand-watermark.tsx`) on select light sections plus dark-surface washes (homepage services bridge, engagements block, footer, Services/Contact/page heroes with `surface="dark"`, final CTA). Keep opacity conservative so type stays WCAG-readable.
+- The homepage client showcase historically used oversized logo motifs; newer passes favor the reusable watermark helper for consistency.
 - The Engagements hero uses a quiet logo watermark.
 - The final CTA uses the `animation-02` motion asset with a static fallback.
 - Browser tabs and app icons use the Limitless logo rather than the old "LC" mark.

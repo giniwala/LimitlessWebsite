@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 export default function EngagementsPage() {
   return (
     <>
-      <section className="bg-brand-deep py-20 text-white">
-        <div className="container-page relative overflow-hidden">
+      <section className="page-hero page-hero-soft-bottom grain text-white">
+        <div className="container-page relative z-10 overflow-hidden">
           <div className="pointer-events-none absolute -right-16 top-0 hidden size-72 opacity-[0.08] mix-blend-screen lg:block">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -34,7 +34,7 @@ export default function EngagementsPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-light py-14 md:py-20">
         <div className="container-page">
           <SectionHeader
             eyebrow="Past companies"

@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-brand-deep py-20 text-white">
-        <div className="container-page">
+      <section className="page-hero page-hero-soft-bottom grain text-white">
+        <div className="container-page relative z-10">
           <p className="text-sm font-semibold uppercase text-brand-soft">{siteCopy.about.eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
             {siteCopy.about.title}
@@ -29,7 +29,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-light py-14 md:py-20">
         <div className="container-page grid gap-10 lg:grid-cols-3">
           {siteCopy.about.cards.map((card) => (
             <article key={card.title} className="rounded-lg border border-border bg-surface p-6 shadow-subtle">
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
       <LimitlessModel compact />
 
-      <section className="bg-surface-muted py-20">
+      <section className="section-soft py-14 md:py-20">
         <div className="container-page">
           <SectionHeader
             eyebrow="Values"
@@ -72,7 +72,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-light py-14 md:py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <SectionHeader
             eyebrow="Development"

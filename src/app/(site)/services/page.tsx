@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BrandWatermark } from "@/components/common/brand-watermark";
 import { ButtonLink } from "@/components/common/button-link";
 import { CTA } from "@/components/common/cta";
 import { iconMap } from "@/components/common/icon-map";
@@ -17,8 +18,9 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-brand-deep py-20 text-white">
-        <div className="container-page">
+      <section className="page-hero page-hero-soft-bottom grain relative overflow-hidden text-white">
+        <BrandWatermark surface="dark" position="right" className="-top-10 right-[-6%]" />
+        <div className="container-page relative z-10">
           <p className="text-sm font-semibold uppercase text-brand-soft">{siteCopy.services.eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
             {siteCopy.services.title}
@@ -34,7 +36,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-light py-14 md:py-18">
         <div className="container-page">
           <SectionHeader
             eyebrow="Capabilities"
@@ -49,7 +51,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-soft py-14 md:py-18">
         <div className="container-page">
           <SectionHeader
             eyebrow="Programming"
@@ -73,7 +75,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-surface-muted py-20">
+      <section className="section-light py-14 md:py-18">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeader
             eyebrow="How projects work"

@@ -37,7 +37,7 @@ export function MediaCarousel({
     <div
       {...pauseHandlers}
       aria-label="Limitless media carousel"
-      className="rounded-lg border border-border bg-surface p-4 shadow-soft md:p-5"
+      className="rounded-lg border border-border bg-surface/90 p-4 shadow-soft md:p-5"
       role="region"
       tabIndex={0}
     >
@@ -156,7 +156,7 @@ export function MediaCarousel({
                     aria-current={index === activeIndex ? "true" : undefined}
                     onClick={() => goTo(index)}
                     className={cn(
-                      "relative aspect-[4/5] overflow-hidden rounded-md border bg-surface-muted transition",
+                    "relative aspect-[4/5] overflow-hidden rounded-lg border bg-surface-muted transition",
                       index === activeIndex
                         ? "border-accent ring-2 ring-accent/25"
                         : "border-border hover:border-accent",

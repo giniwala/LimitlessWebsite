@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function TeamPage() {
   return (
     <>
-      <section className="bg-brand-deep py-20 text-white">
-        <div className="container-page">
+      <section className="page-hero page-hero-soft-bottom grain text-white">
+        <div className="container-page relative z-10">
           <p className="text-sm font-semibold uppercase text-brand-soft">Team</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
             The students leading Townhalls, Workshops, and project teams.
@@ -24,14 +24,14 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-light py-14 md:py-20">
         <div className="container-page">
           <SectionHeader
             eyebrow="Executive Board"
             title="Organization leadership"
-            description="The executive board guides the organization, supports Townhall programming, and keeps the member experience moving."
+            description="The executive board leads founder programming, recruiting, and internal operations."
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 lg:grid-cols-3">
             {boardMembers.map((person) => (
               <TeamCard key={person.name} person={person} />
             ))}
@@ -39,14 +39,14 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="bg-surface-muted py-20">
+      <section className="section-soft py-14 md:py-20">
         <div className="container-page">
           <SectionHeader
             eyebrow="Project Managers"
             title="Engagement team leads"
-            description="Project managers guide Workshop support, client-facing project work, and weekly team progress."
+            description="Project managers run workshop support, client-facing project work, and weekly execution."
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 lg:grid-cols-3">
             {projectManagers.map((person) => (
               <TeamCard key={person.name} person={person} />
             ))}
