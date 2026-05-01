@@ -3,7 +3,6 @@
 import { RefreshCcw } from "lucide-react";
 
 export default function Error({
-  error,
   reset,
 }: {
   error: Error & { digest?: string };
@@ -15,7 +14,7 @@ export default function Error({
         <p className="text-sm font-semibold uppercase text-danger">Something went wrong</p>
         <h1 className="mt-3 text-3xl font-semibold text-foreground">This page could not load.</h1>
         <p className="mt-4 text-sm leading-6 text-muted">
-          {error.message || "Try refreshing the page. If the issue continues, check the dev server logs."}
+          Try refreshing the page. If the issue continues, please contact Limitless Consulting.
         </p>
         <button
           type="button"

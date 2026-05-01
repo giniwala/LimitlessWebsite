@@ -496,6 +496,8 @@ Asset rules:
 2. Vercel redeploys automatically from the connected branch.
 3. Add or update environment variables in **Vercel > Project Settings > Environment Variables**.
 4. Confirm production `/portal` has `MEMBER_PORTAL_PASSWORD` configured.
+5. Confirm `/robots.txt` and `/sitemap.xml` load on the deployed URL.
+6. Submit one real contact form test after Resend variables are configured.
 
 Useful commands:
 
@@ -514,6 +516,21 @@ vercel --prod
 ```
 
 Vercel should use the connected GitHub repository for normal deployments. The `vercel` CLI commands are optional if you need to manage deployments manually.
+
+### Final Launch Checklist
+
+Before pointing a custom domain at the site:
+
+1. Review `FINAL_LAUNCH_AUDIT.md`.
+2. Confirm the Vercel preview for `design-integration-v2` looks correct.
+3. Configure `MEMBER_PORTAL_PASSWORD`, `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` in Vercel.
+4. Confirm `CONTACT_FROM_EMAIL` is verified in Resend.
+5. Test `/contact` with a real message and confirm it arrives at `RSO.Limitless@msu.edu`.
+6. Test `/portal` with the production semester password.
+7. Confirm `/login` returns `404`.
+8. Confirm `/robots.txt` excludes `/portal` and `/sitemap.xml` lists only public routes.
+9. Verify stats, recruiting dates, application links, and portal resource links.
+10. Merge to `main` only after the preview has been approved.
 
 ## Domain and Email
 

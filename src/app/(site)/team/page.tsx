@@ -29,7 +29,7 @@ export default function TeamPage() {
           <SectionHeader
             eyebrow="Executive Board"
             title="Organization leadership"
-            description="The executive board leads founder programming, recruiting, and internal operations."
+            description="Executive board members guiding Townhalls, Workshops, recruiting, operations, and founder support."
           />
           <div className="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 lg:grid-cols-3">
             {boardMembers.map((person) => (

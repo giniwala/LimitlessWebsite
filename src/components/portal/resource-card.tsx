@@ -10,7 +10,7 @@ export function ResourceCard({ resource }: { resource: PortalResource }) {
     <a
       href={resource.href}
       target={isPlaceholder ? undefined : "_blank"}
-      rel={isPlaceholder ? undefined : "noreferrer"}
+      rel={isPlaceholder ? undefined : "noopener noreferrer"}
       className="group flex h-full flex-col rounded-lg border border-border bg-surface p-5 shadow-subtle transition-transform hover:-translate-y-1 hover:border-accent"
     >
       <div className="flex items-start justify-between gap-4">

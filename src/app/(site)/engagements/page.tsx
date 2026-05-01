@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ClientHighlightCard } from "@/components/client-highlight-card";
 import { CTA } from "@/components/common/cta";
 import { SectionHeader } from "@/components/common/section-header";
+import { siteConfig } from "@/data/siteConfig";
 import { publishedClientHighlights } from "@/data/clients";
 import { siteCopy } from "@/data/siteCopy";
 
@@ -15,15 +16,15 @@ export default function EngagementsPage() {
   return (
     <>
       <section className="page-hero page-hero-soft-bottom grain text-white">
-        <div className="container-page relative z-10 overflow-hidden">
-          <div className="pointer-events-none absolute -right-16 top-0 hidden size-72 opacity-[0.08] mix-blend-screen lg:block">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/limitless-logo.svg"
-              alt=""
-              className="h-full w-full object-contain"
-            />
-          </div>
+        <div className="pointer-events-none absolute right-[-4rem] top-1/2 hidden -translate-y-1/2 lg:block" aria-hidden>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={siteConfig.brand.logoPath}
+            alt=""
+            className="h-auto w-[22rem] max-w-none object-contain opacity-[0.08] mix-blend-screen [mask-image:linear-gradient(180deg,black_0%,black_70%,transparent_100%)]"
+          />
+        </div>
+        <div className="container-page relative z-10">
           <p className="text-sm font-semibold uppercase text-brand-soft">{siteCopy.engagements.eyebrow}</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold md:text-6xl">
             {siteCopy.engagements.title}

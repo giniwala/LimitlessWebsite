@@ -48,7 +48,7 @@ export function Footer() {
       <div className="relative z-10 border-t border-white/10 py-5">
         <div className="container-page flex flex-col gap-2 text-xs text-white/54 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Limitless Consulting. All rights reserved.</p>
-          <p>Contact us at {siteConfig.contact.email}</p>
+          <p>East Lansing, MI</p>
         </div>
       </div>
     </footer>

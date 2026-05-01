@@ -50,7 +50,7 @@ export function TeamCard({ person }: { person: TeamMember }) {
               aria-label={`${person.name} LinkedIn profile`}
               className="rounded-full border border-border p-2 text-muted transition-colors hover:border-accent hover:text-accent focus-visible:ring-2 focus-visible:ring-accent/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <ExternalLink aria-hidden className="size-4" />
             </a>

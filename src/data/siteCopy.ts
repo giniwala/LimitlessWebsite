@@ -6,7 +6,7 @@ export const siteCopy = {
     heroEyebrow: "MSU founders. Real challenges. Student strategy.",
     heroTitle: "Limitless Consulting",
     heroDescription:
-      "Open Townhalls, Thursday Workshops, and student-led consulting for MSU founders—bringing real pitches into rooms full of thoughtful student strategy.",
+      "Student consulting for student entrepreneurs.",
     whoWeAreTitle: "Built for MSU founders, students, and real startup problem-solving.",
     whoWeAreDescription:
       "Limitless connects student founders with student consultants and open student audiences through Townhalls, Workshops, and focused startup support.",
@@ -39,7 +39,7 @@ export const siteCopy = {
     engagementsPreview: {
       eyebrow: "Founder showcase",
       title: "Organizations in Limitless orbit.",
-      description: "Public context only—we never publish private scopes, decks, or recommendations.",
+      description: "A concise look at organizations connected to Limitless programming and consulting work.",
     },
     mediaPreview: {
       eyebrow: "Limitless in motion",
@@ -49,8 +49,8 @@ export const siteCopy = {
     },
     teamPreview: {
       eyebrow: "Leadership",
-      title: "The board guiding Townhalls and Workshops.",
-      description: "Executive board and leads running recruiting, ops, founder support, and the room.",
+      title: "The people that make this all possible.",
+      description: "Meet the executive board members leading programming, recruiting, operations, and founder support.",
     },
     contactCta: {
       title: "Have a founder challenge for the room?",
@@ -58,7 +58,7 @@ export const siteCopy = {
         "Tell us what you are building, what decision feels stuck, and whether a Townhall or Workshop could help.",
     },
     ctaBanner: {
-      title: "Ready to plug into the room?",
+      title: "Ready to work with us?",
       description:
         "Founders: bring what you are building. Students: practice strategy where it counts. Start with Townhall or reach out—we will steer you.",
     },
@@ -67,7 +67,7 @@ export const siteCopy = {
     eyebrow: "About",
     title: "Student consulting for student entrepreneurs.",
     description:
-      "Built around open Townhalls, founder-facing Workshops, and practical learning for students from every background.",
+      "Built around Tuesday Townhalls, founder-facing Workshops, and practical learning for students from every background.",
     cards: [
       {
         title: "Mission",
@@ -86,7 +86,7 @@ export const siteCopy = {
       },
     ],
     valuesIntro:
-      "What makes Limitless different is not a deck template. It is the room: founders, students, questions, and live problem solving.",
+      "What makes Limitless different is our openness to all students regardless of experience level.",
     values: [
       {
         title: "Founder proximity",
@@ -134,7 +134,7 @@ export const siteCopy = {
     whoShouldApplyDescription:
       "We look for students who ask thoughtful questions, learn quickly, and can turn founder uncertainty into structured thinking.",
     applicantTraits: [
-      "You like listening to founders explain what is hard right now.",
+      "You like working directly with founders.",
       "You can break ambiguous startup questions into smaller pieces.",
       "You want practical experience before internships.",
       "You bring a perspective from any major, not just business.",
@@ -203,16 +203,16 @@ export const siteCopy = {
       "This page is a public-safe showcase of organizations connected to Limitless programming and consulting work.",
     sectionTitle: "Companies, founders, and campus ventures",
     sectionDescription:
-      "Cards show public company context only. Private recommendations, decks, deliverables, and internal project details stay off the website.",
+      "A quick glance at our past clients.",
   },
   media: {
     eyebrow: "Limitless in motion",
     pageTitle: "Limitless in Motion",
     pageDescription:
       "A curated look at the Townhall recaps, recruiting moments, and LinkedIn personality that make Limitless feel different from a typical consulting club.",
-    sectionTitle: "The posts, recaps, and oddball moments that make Limitless feel alive.",
+    sectionTitle: "A taste of our social media presence.",
     sectionDescription:
-      "Browse a rotating showcase of public posts from the official Limitless LinkedIn.",
+      "Take a look at what we post!",
   },
   contact: {
     eyebrow: "Contact",
@@ -221,6 +221,6 @@ export const siteCopy = {
       "Contact us about Townhalls, Workshops, consulting, partnerships, recruiting, alumni help, or general questions.",
     formTitle: "Tell us what you are building or asking.",
     formDescription:
-      "Send a message securely from your browser—we receive it directly. Prefer your own inbox? Use the Mail link beside the form.",
+      "Send a message securely from your browser—we receive it directly. Prefer your own inbox? Use the email link beside the form.",
   },
 } as const;

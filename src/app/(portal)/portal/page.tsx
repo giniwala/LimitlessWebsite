@@ -13,6 +13,10 @@ import { unlockMemberPortal } from "@/app/(portal)/portal/actions";
 export const metadata: Metadata = {
   title: "Member Portal",
   description: "Shared member resource portal for Limitless Consulting announcements, files, schedules, and links.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export const dynamic = "force-dynamic";
