@@ -29,9 +29,9 @@ export function Hero() {
             <span aria-hidden className="h-2 w-2 rounded-full bg-[var(--neon)] shadow-[0_0_22px_rgb(54_240_160_/_0.8)]" />
             <span>{siteCopy.home.heroEyebrow}</span>
           </p>
-          <h1 className="text-6xl font-semibold leading-[0.95] md:text-8xl">
+          <h1 className="text-6xl font-semibold leading-[1.05] md:text-8xl md:leading-[1.02]">
             <span className="block">{heroLead}</span>
-            {heroTail ? <span className="text-gradient-light glow-text block">{heroTail}</span> : null}
+            {heroTail ? <span className="text-gradient-light glow-text block pb-2 pr-1">{heroTail}</span> : null}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 md:text-xl">
             {siteCopy.home.heroDescription}

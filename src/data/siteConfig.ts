@@ -6,8 +6,8 @@ export const siteConfig = {
   name: "Limitless Consulting",
   shortName: "Limitless",
   school: "Michigan State University",
-  domain: "limitlessconsulting.org",
-  url: "https://limitlessconsulting.org",
+  domain: "limitlessatmsu.com",
+  url: "https://limitlessatmsu.com",
   brand: {
     // Controls the navbar/footer logo. Replace the file in public/brand to update it.
     logoPath: "/brand/limitless-logo.svg",

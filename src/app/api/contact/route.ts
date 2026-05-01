@@ -19,6 +19,7 @@ type ContactPayload = {
   subject?: unknown;
   phone?: unknown;
   message?: unknown;
+  body?: unknown;
   sourcePath?: unknown;
   website?: unknown;
 };
@@ -44,7 +45,15 @@ function getContactConfig() {
   };
 }
 
-function asCleanString(value: unknown, maxLength: number) {
+function asSingleLine(value: unknown, maxLength: number) {
+  if (typeof value !== "string") {
+    return "";
+  }
+
+  return value.trim().replace(/[\r\n]+/g, " ").slice(0, maxLength);
+}
+
+function asMessage(value: unknown, maxLength: number) {
   if (typeof value !== "string") {
     return "";
   }
@@ -76,14 +85,14 @@ function isRateLimited(request: Request) {
 }
 
 function validatePayload(payload: ContactPayload): { data: ValidatedContact } | { error: string } {
-  const name = asCleanString(payload.name, MAX_NAME_LENGTH);
-  const email = asCleanString(payload.email, MAX_EMAIL_LENGTH).toLowerCase();
-  const inquiryType = asCleanString(payload.inquiryType, MAX_OPTIONAL_LENGTH);
-  const organization = asCleanString(payload.organization, MAX_OPTIONAL_LENGTH);
-  const subject = asCleanString(payload.subject, MAX_OPTIONAL_LENGTH);
-  const phone = asCleanString(payload.phone, MAX_OPTIONAL_LENGTH);
-  const message = asCleanString(payload.message, MAX_MESSAGE_LENGTH);
-  const sourcePath = asCleanString(payload.sourcePath, MAX_OPTIONAL_LENGTH);
+  const name = asSingleLine(payload.name, MAX_NAME_LENGTH);
+  const email = asSingleLine(payload.email, MAX_EMAIL_LENGTH).toLowerCase();
+  const inquiryType = asSingleLine(payload.inquiryType, MAX_OPTIONAL_LENGTH);
+  const organization = asSingleLine(payload.organization, MAX_OPTIONAL_LENGTH);
+  const subject = asSingleLine(payload.subject, MAX_OPTIONAL_LENGTH);
+  const phone = asSingleLine(payload.phone, MAX_OPTIONAL_LENGTH);
+  const message = asMessage(payload.message ?? payload.body, MAX_MESSAGE_LENGTH);
+  const sourcePath = asSingleLine(payload.sourcePath, MAX_OPTIONAL_LENGTH);
 
   if (!name) {
     return { error: "Please enter your name." };
@@ -91,6 +100,10 @@ function validatePayload(payload: ContactPayload): { data: ValidatedContact } | 
 
   if (!email || !isValidEmail(email)) {
     return { error: "Please enter a valid email address." };
+  }
+
+  if (!subject) {
+    return { error: "Please enter a subject." };
   }
 
   if (!message) {
@@ -140,16 +153,16 @@ function row(label: string, value: string) {
 function buildEmail(contact: ValidatedContact) {
   const timestamp = new Date().toISOString();
   const subject =
-    contact.subject ||
-    (contact.inquiryType
-      ? `New ${contact.inquiryType} from ${contact.name}`
-      : `New Limitless Website Inquiry from ${contact.name}`);
+    contact.subject
+      ? `New Limitless Website Inquiry: ${contact.subject}`
+      : `New Limitless Website Inquiry from ${contact.name}`;
 
   const plainText = [
     `New Limitless Website Inquiry`,
     ``,
     `Name: ${contact.name}`,
     `Email: ${contact.email}`,
+    `Subject: ${contact.subject}`,
     contact.inquiryType ? `Inquiry type: ${contact.inquiryType}` : "",
     contact.organization ? `Organization/company: ${contact.organization}` : "",
     contact.phone ? `Phone: ${contact.phone}` : "",
@@ -172,6 +185,7 @@ function buildEmail(contact: ValidatedContact) {
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
           ${row("Name", contact.name)}
           ${row("Email", contact.email)}
+          ${row("Subject", contact.subject)}
           ${row("Inquiry type", contact.inquiryType)}
           ${row("Organization/company", contact.organization)}
           ${row("Phone", contact.phone)}
@@ -202,7 +216,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  const honeypot = asCleanString(payload.website, MAX_OPTIONAL_LENGTH);
+  const honeypot = asSingleLine(payload.website, MAX_OPTIONAL_LENGTH);
   if (honeypot) {
     return NextResponse.json({ ok: true }, { status: 200 });
   }

@@ -62,7 +62,7 @@ Variables:
 | Variable | Purpose |
 | --- | --- |
 | `RESEND_API_KEY` | Server-only secret from the Resend dashboard. Never prefix with `NEXT_PUBLIC_`. |
-| `CONTACT_FROM_EMAIL` | Verified sender/domain in Resend, such as `no-reply@your-verified-domain.com`. |
+| `CONTACT_FROM_EMAIL` | Verified sender/domain in Resend, recommended as `no-reply@limitlessatmsu.com`. |
 | `CONTACT_TO_EMAIL` | Inbox that receives inquiries (defaults to `siteConfig.contact.email`, currently `RSO.Limitless@msu.edu`). |
 
 Example `.env.local` values:
@@ -70,7 +70,7 @@ Example `.env.local` values:
 ```bash
 RESEND_API_KEY=your_resend_key_here
 CONTACT_TO_EMAIL=RSO.Limitless@msu.edu
-CONTACT_FROM_EMAIL=no-reply@your-verified-domain.com
+CONTACT_FROM_EMAIL=no-reply@limitlessatmsu.com
 MEMBER_PORTAL_PASSWORD=test-password
 ```
 
@@ -86,7 +86,7 @@ Honeypot, validation, and light rate limiting happen in the route; there is **no
 
 The form still exposes a **`mailto:`** link as a deliberate fallback for visitors who prefer their own mail client.
 
-See `CONTACT_SETUP.md` for full Resend and Vercel setup steps.
+See `CONTACT_SETUP.md` for the provider comparison plus full Resend, GoDaddy DNS, and Vercel setup steps for `limitlessatmsu.com`.
 
 ## Local Development
 
@@ -522,10 +522,10 @@ Vercel should use the connected GitHub repository for normal deployments. The `v
 Before pointing a custom domain at the site:
 
 1. Review `FINAL_LAUNCH_AUDIT.md`.
-2. Confirm the Vercel preview for `design-integration-v2` looks correct.
+2. Confirm the Vercel preview for the current working branch looks correct.
 3. Configure `MEMBER_PORTAL_PASSWORD`, `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` in Vercel.
 4. Confirm `CONTACT_FROM_EMAIL` is verified in Resend.
-5. Test `/contact` with a real message and confirm it arrives at `RSO.Limitless@msu.edu`.
+5. Test `/contact` on `https://limitlessatmsu.com/contact` with a real message and confirm it arrives at `RSO.Limitless@msu.edu`.
 6. Test `/portal` with the production semester password.
 7. Confirm `/login` returns `404`.
 8. Confirm `/robots.txt` excludes `/portal` and `/sitemap.xml` lists only public routes.
@@ -533,6 +533,10 @@ Before pointing a custom domain at the site:
 10. Merge to `main` only after the preview has been approved.
 
 ## Domain and Email
+
+Current live domain:
+
+- `limitlessatmsu.com`
 
 Good domain options:
 

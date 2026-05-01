@@ -17,6 +17,7 @@ type ContactResponse = {
 };
 
 const MAX_MESSAGE_LENGTH = 5000;
+const MAX_SUBJECT_LENGTH = 160;
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -35,6 +36,7 @@ export function ContactForm() {
     const formData = new FormData(form);
     const name = String(formData.get("name") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
+    const subject = String(formData.get("subject") ?? "").trim();
     const organization = String(formData.get("organization") ?? "").trim();
     const inquiryType = String(formData.get("inquiryType") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
@@ -47,6 +49,11 @@ export function ContactForm() {
 
     if (!email || !isValidEmail(email)) {
       setSubmitState({ kind: "error", message: "Please enter a valid email address." });
+      return;
+    }
+
+    if (!subject) {
+      setSubmitState({ kind: "error", message: "Please enter a subject." });
       return;
     }
 
@@ -72,6 +79,7 @@ export function ContactForm() {
         body: JSON.stringify({
           name,
           email,
+          subject,
           organization,
           inquiryType,
           message,
@@ -141,6 +149,18 @@ export function ContactForm() {
           />
         </label>
       </div>
+
+      <label className="mt-5 block text-sm font-semibold text-foreground">
+        Subject
+        <input
+          required
+          name="subject"
+          disabled={submitState.kind === "loading"}
+          maxLength={MAX_SUBJECT_LENGTH}
+          className="mt-2 w-full rounded-md border border-border bg-white px-3 py-3 text-sm font-normal text-foreground disabled:opacity-60"
+          placeholder="What should we know?"
+        />
+      </label>
 
       <label className="mt-5 block text-sm font-semibold text-foreground">
         Organization / Company

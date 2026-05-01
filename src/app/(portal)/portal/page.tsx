@@ -70,12 +70,6 @@ function PasswordGate({ error }: { error?: string | string[] }) {
             <h1 className="mt-3 text-3xl font-semibold text-foreground md:text-5xl">
               Shared resources for current Limitless members.
             </h1>
-            <p className="mt-5 text-base leading-7 text-muted">
-              Enter the current semester password to access meeting materials, consulting templates, internal links, and member resources.
-            </p>
-            <p className="mt-5 text-sm text-muted">
-              Public website content stays open. This portal is only for internal organization materials.
-            </p>
           </div>
         </section>
 
@@ -84,9 +78,6 @@ function PasswordGate({ error }: { error?: string | string[] }) {
             <DoorOpen aria-hidden className="size-6" />
           </div>
           <h2 className="mt-5 text-2xl font-semibold text-foreground">Enter portal password</h2>
-          <p className="mt-3 text-sm leading-6 text-muted">
-            The shared password is stored server-side and can be rotated each semester.
-          </p>
 
           {!isConfigured ? (
             <div className="mt-5 rounded-md border border-accent/25 bg-surface-muted p-4 text-sm leading-6 text-muted">
@@ -96,7 +87,7 @@ function PasswordGate({ error }: { error?: string | string[] }) {
 
           <form action={unlockMemberPortal} className="mt-6 space-y-4">
             <label className="block text-sm font-semibold text-foreground">
-              Semester password
+              Password is updated each semester.
               <input
                 required
                 name="password"
