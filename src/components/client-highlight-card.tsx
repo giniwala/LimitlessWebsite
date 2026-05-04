@@ -45,10 +45,10 @@ export function ClientHighlightCard({ client, showHighlights = true }: ClientHig
         ) : null}
       </div>
 
-      <p className="mt-5 flex-1 text-sm leading-6 text-muted">{client.shortDescription}</p>
+      <p className="mt-5 text-sm leading-6 text-muted">{client.shortDescription}</p>
 
       {showHighlights ? (
-        <ul className="mt-5 flex flex-wrap gap-2">
+        <ul className="mt-5 flex flex-col items-start gap-2">
           {client.publicHighlights.map((highlight) => (
             <li
               key={highlight}
